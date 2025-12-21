@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iCanvas for Business | Premium Commercial Wall Art</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        red: {
+                            50: '#ffeaea',
+                            100: '#ffd5d5',
+                            200: '#ffb3b3',
+                            300: '#ff8282',
+                            400: '#ff5353',
+                            500: '#ff2b2b',
+                            600: '#f00',
+                            700: '#d10000',
+                        },
+                        brand: {
+                            dark: '#0a0a0a',
+                            light: '#ffffff',
+                        }
+                    },
+                    animation: {
+                        'slide-in-right': 'slideInRight 0.8s ease-out forwards',
+                        'slide-in-left': 'slideInLeft 0.8s ease-out forwards',
+                        'slide-in-bottom': 'slideInBottom 0.8s ease-out forwards',
+                        'slide-in-up': 'slideInUp 0.8s ease-out forwards',
+                        'pulse-glow': 'pulseGlow 2s infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                        'timeline-slide': 'timelineSlide 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        slideInRight: {
+                            '0%': { transform: 'translateX(100px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        slideInLeft: {
+                            '0%': { transform: 'translateX(-100px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        slideInBottom: {
+                            '0%': { transform: 'translateY(100px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        slideInUp: {
+                            '0%': { transform: 'translateY(50px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(255, 83, 83, 0.3)' },
+                            '50%': { boxShadow: '0 0 40px rgba(255, 83, 83, 0.6)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        timelineSlide: {
+                            '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a0a;
+            color: #ffffff;
+        }
+
+        .container {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+
+        .nav-red-bg {
+            background: rgba(255, 83, 83, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .hover-glow:hover {
+            box-shadow: 0 0 30px rgba(255, 83, 83, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .announcement-card {
+            background: rgba(255, 83, 83, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 83, 83, 0.2);
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .section-padding {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+
+        .outcome-highlight {
+            background: linear-gradient(90deg, #ff5353, #ff2b2b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .timeline-item.animate {
+            animation: slideInUp 0.8s ease-out forwards;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background: #ff5353;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255, 83, 83, 0.5);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 2rem;
+            width: 2px;
+            height: calc(100% + 1rem);
+            background: rgba(255, 83, 83, 0.3);
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        /* TABLE STYLES FOR MOBILE RESPONSIVENESS AND DESKTOP SPACING */
+        .comparison-table-container {
+            overflow-x: auto;
+            padding: 0;
+            max-width: 1400px;
+            margin: 0 auto;
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .comparison-table-container {
+                padding: 0 4rem; 
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .comparison-table-container {
+                padding: 0 6rem; 
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .comparison-table-container {
+                padding: 0 8rem; 
+            }
+        }
+
+        .comparison-table {
+            background: transparent;
+            min-width: 800px;
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+        @media (min-width: 768px) {
+            .comparison-table {
+                min-width: 100%;
+            }
+        }
+
+        .comparison-table thead {
+            background: rgba(255, 83, 83, 0.15);
+        }
+
+        .comparison-table th {
+            padding: 1rem;
+            font-weight: bold;
+            text-align: center;
+            border: none;
+            font-size: 0.875rem;
+        }
+
+        @media (min-width: 768px) {
+            .comparison-table th {
+                padding: 1.5rem;
+                font-size: 1rem;
+            }
+        }
+
+        .comparison-table th:first-child {
+            border-top-left-radius: 12px;
+            text-align: left;
+            min-width: 150px;
+        }
+
+        .comparison-table th:last-child {
+            border-top-right-radius: 12px;
+            color: #ff5353;
+        }
+
+        .comparison-table td {
+            padding: 0.875rem;
+            text-align: center;
+            border: none;
+            font-size: 0.8125rem;
+        }
+
+        @media (min-width: 768px) {
+            .comparison-table td {
+                padding: 1.5rem;
+                font-size: 1rem;
+            }
+        }
+
+        .comparison-table td:first-child {
+            text-align: left;
+            font-weight: 500;
+            min-width: 150px;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .comparison-table tr:hover {
+            background: rgba(255, 83, 83, 0.05);
+        }
+
+        .comparison-table tr:last-child td:first-child {
+            border-bottom-left-radius: 12px;
+        }
+
+        .comparison-table tr:last-child td:last-child {
+            border-bottom-right-radius: 12px;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .faq-item[open] {
+            background: rgba(255, 83, 83, 0.08);
+        }
+
+        .faq-item.animate {
+            animation: slideInUp 0.8s ease-out forwards;
+        }
+
+        .stats-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 83, 83, 0.1), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            100% {
+                left: 100%;
+            }
+        }
+
+        .feature-card {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .feature-card.animate {
+            animation: slideInUp 0.8s ease-out forwards;
+        }
+
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            place-items: center;
+        }
+
+        .logo-placeholder {
+            width: 120px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        /* HERO SECTION SPECIFIC STYLES */
+        .hero-image-container {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: right center;
+            opacity: 0.7;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.3) 100%);
+        }
+
+        /* Mobile announcement text smaller */
+        @media (max-width: 768px) {
+            .mobile-announcement-text {
+                font-size: 0.75rem !important;
+            }
+            
+            .mobile-announcement-link {
+                font-size: 0.75rem !important;
+            }
+        }
+
+        /* Pain Points Card  */
+        .pain-points-card {
+            background: rgba(255, 83, 83, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Real Project Outcomes - */
+        .outcome-item {
+            margin-bottom: 4rem;
+        }
+
+        .outcome-content {
+            background: transparent !important;
+            border-radius: 0 !important;
+            padding: 0 !important;
+            backdrop-filter: none !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        /* UPDATED: */
+        .artist-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        /* B2B Logo */
+        .b2b-logo {
+            background: rgba(255, 83, 83, 0.1);
+            border: 1px solid rgba(255, 83, 83, 0.2);
+        }
+
+        /*  Final CTA Card  */
+        .cta-card {
+            background: rgba(255, 83, 83, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Footer Styles for Centering */
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin: 2rem 0;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 2rem;
+        }
+
+        @media (min-width: 1024px) {
+            .footer-container {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+                text-align: left;
+            }
+            
+            .footer-links {
+                flex-direction: row;
+                justify-content: space-around;
+                margin: 0;
+            }
+            
+            .footer-social {
+                justify-content: flex-end;
+                margin-top: 0;
+            }
+        }
+
+        /*  Testimonials Card with red/white transparent look */
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 nav-red-bg shadow-sm border-b border-white/10">
+        <div class="container mx-auto h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <!-- Simple Logo Representation -->
+                <span class="text-3xl font-bold tracking-tight text-red-400">iCanvas</span>
+                <span
+                    class="b2b-logo text-gray-300 px-2 py-1 rounded text-xs uppercase tracking-wider font-bold mt-1">Business</span>
+            </div>
+
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="#process" class="hover:text-red-400 transition">Process</a>
+                <a href="#success" class="hover:text-red-400 transition">Client Success</a>
+                <a href="#artists" class="hover:text-red-400 transition">Featured Artists</a>
+                <a href="#testimonials" class="hover:text-red-400 transition">Testimonials</a>
+                <a href="#faq" class="hover:text-red-400 transition">FAQs</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="hidden md:block text-red-400 font-semibold hover:text-red-300 transition">Sign
+                    In</a>
+                <a href="#contact"
+                    class="hidden md:block bg-red-500 hover:bg-red-600 text-white px-6 py-2.5 rounded-full font-medium transition shadow-lg shadow-red-500/20 hover-glow">
+                    Book Consultation
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300 text-2xl focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-gray-900 border-t border-gray-800 absolute w-full left-0 top-20 shadow-lg p-6 flex flex-col gap-4">
+            <a href="#process" class="text-gray-300 font-medium hover:text-red-400">Process</a>
+            <a href="#success" class="text-gray-300 font-medium hover:text-red-400">Client Success</a>
+            <a href="#artists" class="text-gray-300 font-medium hover:text-red-400">Featured Artists</a>
+            <a href="#testimonials" class="text-gray-300 font-medium hover:text-red-400">Testimonials</a>
+            <a href="#faq" class="text-gray-300 font-medium hover:text-red-400">FAQs</a>
+            <hr class="border-gray-800">
+            <a href="#contact" class="text-red-400 font-semibold">Sign In</a>
+            <a href="#contact"
+                class="bg-red-500 text-white px-6 py-3 rounded-full font-medium text-center shadow-lg hover-glow">Book
+                Consultation</a>
+        </div>
+    </nav>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.timeline-item, .faq-item, .feature-card').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+
+    <!-- HERO SECTION -->
+    <header class="relative overflow-hidden min-h-[90vh] md:min-h-screen">
+
+        <!-- Background Image with Overlay -->
+        <div class="hero-image-container">
+            <img src="./assets/Hero-image1.png" alt="Modern Art in Commercial Space">
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <!-- Announcement Bar -->
+        <div class="pt-2 md:pt-2 pb-2 md:pb-2">
+            <div class="announcement-card rounded-2xl px-4 md:px-8 py-2 md:py-3 mx-auto animate-slide-in-bottom">
+                <div class="flex items-center justify-center gap-2 md:gap-3 flex-wrap md:flex-nowrap">
+                    <span class="w-2 h-2 md:w-3 md:h-3 bg-red-400 rounded-full animate-pulse"></span>
+                    <span class="mobile-announcement-text text-xs md:text-sm font-semibold tracking-wide text-white">4 project slots left for Q1 2026</span>
+                    <span class="w-2 h-2 md:w-3 md:h-3 bg-red-400 rounded-full animate-pulse"></span>
+                    <a href="#contact"
+                        class="mobile-announcement-link text-white hover:text-red-300 font-bold transition-all duration-300 hover:scale-105 text-xs md:text-sm whitespace-nowrap">
+                        Book a strategy call →
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto py-4 md:py-8 lg:py-12 relative z-10">
+            <div class="max-w-2xl">
+                <h5 class="text-red-400 font-bold uppercase tracking-widest text-sm mb-2 md:mb-3 animate-slide-in-left">iCanvas
+                    for Business</h5>
+                <h1
+                    class="text-3xl md:text-4xl lg:text-6xl font-bold text-white leading-tight mb-3 md:mb-4 animate-slide-in-left">
+                    Premium Wall Art for <br>
+                    <span class="text-red-400">Hospitality, Real Estate & Corporate Spaces</span>
+                </h1>
+                
+                <!-- Since 2006 Badge -->
+                <div
+                    class="inline-flex items-center gap-2 bg-red-500/10 px-3 md:px-4 py-1 md:py-2 rounded-full mb-4 md:mb-6 border border-red-500/20 animate-slide-in-bottom">
+                    <span class="text-xs md:text-sm font-semibold text-white">Since 2006</span>
+                </div>
+                
+                <p class="text-base md:text-lg text-gray-300 mb-4 md:mb-6 leading-relaxed animate-slide-in-left">
+                    We partner with interior designers, architects, hospitality groups, and real estate developers to
+                    deliver high-volume, design-consistent wall art — handcrafted, scalable, and built for commercial
+                    environments.
+                </p>
+                
+                <!-- Button -->
+                <div class="flex flex-col sm:flex-row gap-4 mb-6 md:mb-8 animate-slide-in-bottom">
+                    <a href="#contact"
+                        class="bg-red-500 hover:bg-red-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-center transition shadow-xl shadow-red-500/20 hover-glow animate-pulse-glow inline-block w-fit sm:w-auto mx-auto sm:mx-0">
+                        Book Art Consultation
+                    </a>
+                </div>
+                
+                <!-- Stats -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 animate-slide-in-bottom">
+                    <div class="text-center">
+                        <p class="text-2xl md:text-3xl font-bold text-white mb-2 stats-item">10M+</p>
+                        <p class="text-gray-400">Artworks Produced</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-2xl md:text-3xl font-bold text-white mb-2 stats-item">49,000+</p>
+                        <p class="text-gray-400">5-Star Reviews</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-2xl md:text-3xl font-bold text-white mb-2 stats-item">USA-Based</p>
+                        <p class="text-gray-400">Craftsmanship</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Trusted By -->
+    <section class="py-16 border-b border-white/10 bg-black">
+        <div class="container mx-auto">
+            <p
+                class="text-center text-gray-400 text-sm font-semibold uppercase tracking-widest mb-8 animate-slide-in-bottom">
+                Trusted by professionals designing spaces at scale</p>
+            <div class="logo-grid">
+                <div class="logo-placeholder">logo</div>
+                <div class="logo-placeholder">logo</div>
+                <div class="logo-placeholder">logo</div>
+                <div class="logo-placeholder">logo</div>
+                <div class="logo-placeholder">logo</div>
+                <div class="logo-placeholder">logo</div>
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Points -->
+    <section class="section-padding bg-black">
+        <div class="container mx-auto">
+            <div class="max-w-4xl mx-auto">
+                <div
+                    class="pain-points-card rounded-3xl p-8 md:p-12 shadow-2xl hover-glow animate-slide-in-bottom">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Why interior designers struggle with
+                            traditional art vendors</h2>
+                        <p class="text-red-400 font-bold text-lg mb-8">Most vendors aren't built for serious design projects</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-start gap-3">
+                            <span class="text-red-400 text-xl">❌</span>
+                            <div>
+                                <h4 class="font-bold text-white">Slow production</h4>
+                                <p class="text-gray-400 text-sm mt-1">Long lead times that delay project timelines</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-red-400 text-xl">❌</span>
+                            <div>
+                                <h4 class="font-bold text-white">Limited catalog</h4>
+                                <p class="text-gray-400 text-sm mt-1">Not enough options for commercial-scale projects
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-red-400 text-xl">❌</span>
+                            <div>
+                                <h4 class="font-bold text-white">Inconsistent color reproduction</h4>
+                                <p class="text-gray-400 text-sm mt-1">Colors vary between batches and orders</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-red-400 text-xl">❌</span>
+                            <div>
+                                <h4 class="font-bold text-white">Frames that warp over time</h4>
+                                <p class="text-gray-400 text-sm mt-1">Poor quality materials affecting durability</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-red-400 text-xl">❌</span>
+                            <div>
+                                <h4 class="font-bold text-white">No bulk pricing structure</h4>
+                                <p class="text-gray-400 text-sm mt-1">Inflated costs for commercial quantities</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-red-400 text-xl">❌</span>
+                            <div>
+                                <h4 class="font-bold text-white">Zero project coordination</h4>
+                                <p class="text-gray-400 text-sm mt-1">No dedicated support for complex installations</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-red-400 text-xl">❌</span>
+                            <div>
+                                <h4 class="font-bold text-white">Risky custom orders</h4>
+                                <p class="text-gray-400 text-sm mt-1">Unreliable quality and delivery for custom work
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center pt-8 border-t border-red-500/20">
+                        <p class="text-xl font-bold text-white">Designing a commercial space requires reliability. Not
+                            guesswork.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The iCanvas Commercial Art System -->
+    <section id="process" class="section-padding bg-gray-900">
+        <div class="container mx-auto">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="lg:w-1/2 animate-slide-in-left">
+                    <h2 class="text-4xl font-bold mb-6 text-white">The iCanvas Commercial Art System</h2>
+                    <p class="text-lg text-gray-300 mb-8">We built a full-stack, end-to-end art production system
+                        specifically for commercial interiors.</p>
+
+                    <ul class="space-y-8">
+                        <li class="flex gap-4">
+                            <span
+                                class="flex-shrink-0 w-10 h-10 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center font-bold text-xl">1</span>
+                            <div>
+                                <h4 class="font-bold text-white text-xl mb-2">Scalable US Production</h4>
+                                <p class="text-gray-400">
+                                    Whether you need 20 or 2,000 pieces, we deliver consistent quality <span class="text-red-400">•</span> predictable
+                                    lead times <span class="text-red-400">•</span> bulk pricing <span class="text-red-400">•</span> protected shipping
+                                </p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <span
+                                class="flex-shrink-0 w-10 h-10 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center font-bold text-xl">2</span>
+                            <div>
+                                <h4 class="font-bold text-white text-xl mb-2">600K+ Artwork Catalog (Design-Ready)</h4>
+                                <p class="text-gray-400">
+                                    Your team can curate from scenic + nature <span class="text-red-400">•</span> modern abstract <span class="text-red-400">•</span> photography <span class="text-red-400">•</span> artist
+                                    exclusives <span class="text-red-400">•</span> lobby-size art <span class="text-red-400">•</span> paired sets for multi-room installs
+                                </p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <span
+                                class="flex-shrink-0 w-10 h-10 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center font-bold text-xl">3</span>
+                            <div>
+                                <h4 class="font-bold text-white text-xl mb-2">Custom Art at Scale</h4>
+                                <p class="text-gray-400">
+                                    We help execute branded visual concepts with photography <span class="text-red-400">•</span> artist collabs <span class="text-red-400">•</span>
+                                    multi-piece series <span class="text-red-400">•</span> oversized formats <span class="text-red-400">•</span> acrylic & metal prints
+                                </p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <span
+                                class="flex-shrink-0 w-10 h-10 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center font-bold text-xl">4</span>
+                            <div>
+                                <h4 class="font-bold text-white text-xl mb-2">Museum-Grade Quality + Durability</h4>
+                                <p class="text-gray-400">
+                                    Every piece uses UV-resistant inks <span class="text-red-400">•</span> solid warp-free frames <span class="text-red-400">•</span> hand-stretching <span class="text-red-400">•</span>
+                                    consistent color across large orders
+                                </p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <span
+                                class="flex-shrink-0 w-10 h-10 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center font-bold text-xl">5</span>
+                            <div>
+                                <h4 class="font-bold text-white text-xl mb-2">Full B2B Project Management</h4>
+                                <p class="text-gray-400">
+                                    Direct access to a dedicated specialist for procurement <span class="text-red-400">•</span> design reviews <span class="text-red-400">•</span> volume
+                                    discounts <span class="text-red-400">•</span> multi-site shipping <span class="text-red-400">•</span> replacements guaranteed
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lg:w-1/2 animate-slide-in-right">
+                    <!-- Image Grid Composition -->
+                    <div class="grid grid-cols-2 gap-6">
+                        <img src="./assets/styles/abstract.png" alt="Abstract Art"
+                            class="rounded-2xl shadow-2xl w-full h-64 object-cover transform translate-y-8 border-2 border-white/10">
+                        <img src="./assets/rooms/office.png" alt="Office Space"
+                            class="rounded-2xl shadow-2xl w-full h-64 object-cover border-2 border-white/10">
+                        <img src="./assets/rooms/living-room.png" alt="Living Room"
+                            class="rounded-2xl shadow-2xl w-full h-64 object-cover border-2 border-white/10">
+                        <img src="./assets/styles/modern-decor.png" alt="Modern Decor"
+                            class="rounded-2xl shadow-2xl w-full h-64 object-cover transform -translate-y-8 border-2 border-white/10">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real Project Outcomes  -->
+    <section id="success" class="section-padding bg-black">
+        <div class="container mx-auto">
+            <div class="text-center mb-16 animate-slide-in-bottom">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Real Project Outcomes</h2>
+            </div>
+
+            <div class="space-y-20">
+                <!-- Outcome 1 -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="animate-slide-in-left">
+                        <h3 class="text-4xl font-bold mb-6 text-white">
+                            Hospitality Group <br> 
+                            <span class="text-red-400 font-bold text-2xl animate-pulse-glow">145+ Units</span>
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed text-xl">
+                            Delivered multiple room themes with consistent <br>
+                            <span class="text-red-400 font-bold text-xl">art sets</span> that matched brand identity.<br>
+                            Lead time reduced by <span class="text-red-400 font-bold text-2xl">40%</span>.
+                        </p>
+                    </div>
+                    <div class="animate-slide-in-right">
+                        <div class="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-8 border border-white/10 h-80 flex items-center justify-center hover-glow">
+                            <div class="text-center">
+                                <i class="fas fa-hotel text-red-400 text-7xl mb-6"></i>
+                                <p class="text-gray-300 text-xl font-semibold">Hospitality Project</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Outcome 2 -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="animate-slide-in-right lg:order-2">
+                        <h3 class="text-4xl font-bold mb-6 text-white">
+                            Corporate Office Expansion <br> 
+                            <span class="text-red-400 font-bold text-2xl animate-pulse-glow">9 Locations</span>
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed text-xl">
+                            Created a cohesive abstract collection across <br>
+                            multiple floors and locations. <br>
+                            Saved the client <span class="text-red-400 font-bold text-2xl">55%</span> vs gallery sourcing.
+                        </p>
+                    </div>
+                    <div class="animate-slide-in-left lg:order-1">
+                        <div class="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-8 border border-white/10 h-80 flex items-center justify-center hover-glow">
+                            <div class="text-center">
+                                <i class="fas fa-building text-red-400 text-7xl mb-6"></i>
+                                <p class="text-gray-300 text-xl font-semibold">Corporate Project</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Outcome 3 -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="animate-slide-in-left">
+                        <h3 class="text-4xl font-bold mb-6 text-white">
+                            Luxury Apartment Complex <br> 
+                            <span class="text-red-400 font-bold text-2xl animate-pulse-glow">380 Units</span>
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed text-xl">
+                            Designed custom photography series produced <br>
+                            at scale for all residential units. <br>
+                            <span class="text-red-400 font-bold text-xl">Zero damaged shipments</span> delivered.
+                        </p>
+                    </div>
+                    <div class="animate-slide-in-right">
+                        <div class="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-8 border border-white/10 h-80 flex items-center justify-center hover-glow">
+                            <div class="text-center">
+                                <i class="fas fa-home text-red-400 text-7xl mb-6"></i>
+                                <p class="text-gray-300 text-xl font-semibold">Residential Project</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Outcome 4 -->
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="animate-slide-in-right lg:order-2">
+                        <h3 class="text-4xl font-bold mb-6 text-white">
+                            Boutique Hotel Chain <br> 
+                            <span class="text-red-400 font-bold text-2xl animate-pulse-glow">7 Properties</span>
+                        </h3>
+                        <p class="text-gray-300 leading-relaxed text-xl">
+                            Produced large-format acrylic and canvas <br>
+                            pieces for lobbies & premium suites. <br>
+                            <span class="text-red-400 font-bold text-xl">Brand experience elevated</span> instantly.
+                        </p>
+                    </div>
+                    <div class="animate-slide-in-left lg:order-1">
+                        <div class="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-8 border border-white/10 h-80 flex items-center justify-center hover-glow">
+                            <div class="text-center">
+                                <i class="fas fa-concierge-bell text-red-400 text-7xl mb-6"></i>
+                                <p class="text-gray-300 text-xl font-semibold">Hotel Project</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Artists  -->
+    <section id="artists" class="section-padding bg-gray-900">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-16 text-center text-white animate-slide-in-bottom">Featured Artists</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+
+                <!-- Artist 1 -->
+                <div
+                    class="artist-card rounded-2xl p-8 flex flex-col md:flex-row gap-6 hover-glow border border-white/10 animate-slide-in-left">
+                    <img src="./assets/testimonial/jo-grundy.png" alt="Jo Grundy"
+                        class="w-24 h-24 rounded-full object-cover border-4 border-red-500/30 shrink-0">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="font-bold text-xl text-white">Jo Grundy</h4>
+                            <div class="text-yellow-400 text-sm"><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i></div>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                            "Jo Grundy draws inspiration from the mood, light, and detail of the changing English
+                            landscape. Specializing in landscapes, animals, and nature..."
+                        </p>
+                        <span class="text-red-400 text-xs font-bold uppercase tracking-wider">Top Rated Landscape
+                            Artist</span>
+                    </div>
+                </div>
+
+                <!-- Artist 2 -->
+                <div
+                    class="artist-card rounded-2xl p-8 flex flex-col md:flex-row gap-6 hover-glow border border-white/10 animate-slide-in-right">
+                    <img src="./assets/testimonial/WarrenKimble.png" alt="Warren Kimble"
+                        class="w-24 h-24 rounded-full object-cover border-4 border-red-500/30 shrink-0">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="font-bold text-xl text-white">Warren Kimble</h4>
+                            <div class="text-yellow-400 text-sm"><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i></div>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                            "Warren Kimble's art is rooted in his love for Early American craftsmanship and Folk Art.
+                            Using acrylics, watercolors, and oils, he captures Vermont's rural charm..."
+                        </p>
+                        <span class="text-red-400 text-xs font-bold uppercase tracking-wider">Brandon, VT</span>
+                    </div>
+                </div>
+
+                <!-- Artist 3 -->
+                <div
+                    class="artist-card rounded-2xl p-8 flex flex-col md:flex-row gap-6 hover-glow border border-white/10 animate-slide-in-left">
+                    <img src="./assets/testimonial/Manasseh-Johnson.png" alt="Manasseh Johnson"
+                        class="w-24 h-24 rounded-full object-cover border-4 border-red-500/30 shrink-0">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="font-bold text-xl text-white">Manasseh Johnson</h4>
+                            <div class="text-yellow-400 text-sm"><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i></div>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                            "Manasseh Johnson's art combines caricature and realism, influenced by music, pop culture,
+                            and fashion. Using acrylic, colored pencil, digital art..."
+                        </p>
+                        <span class="text-red-400 text-xs font-bold uppercase tracking-wider">San Antonio, TX</span>
+                    </div>
+                </div>
+
+                <!-- Artist 4 -->
+                <div
+                    class="artist-card rounded-2xl p-8 flex flex-col md:flex-row gap-6 hover-glow border border-white/10 animate-slide-in-right">
+                    <img src="./assets/testimonial/Charles-Harker.png" alt="Charles Harker"
+                        class="w-24 h-24 rounded-full object-cover border-4 border-red-500/30 shrink-0">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="font-bold text-xl text-white">Charles Harker</h4>
+                            <div class="text-yellow-400 text-sm"><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i></div>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                            "Charles Harker's imaginative landscapes and cityscapes explore the intersection of culture
+                            and nature. With elements drawn from art history..."
+                        </p>
+                        <span class="text-red-400 text-xs font-bold uppercase tracking-wider">Guadalajara, MX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section  -->
+    <section id="testimonials" class="section-padding bg-black">
+        <div class="container mx-auto">
+            <div class="text-center mb-16 animate-slide-in-bottom">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Testimonials</h2>
+                <p class="text-lg text-gray-400">Hear what our clients say about working with iCanvas</p>
+            </div>
+
+            <div
+                class="testimonial-card rounded-3xl p-12 border border-white/10 hover-glow animate-slide-in-up">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-comments text-red-400 text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Client Testimonials </h3>
+                    <p class="text-gray-400 max-w-2xl mx-auto">
+                       testimonials space for later 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Complete B2B Art Workflow -->
+    <section class="section-padding bg-gray-900">
+        <div class="container mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16 animate-slide-in-bottom">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">The Complete B2B Art Workflow</h2>
+                <p class="text-lg text-gray-400">What happens when you book a call?</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-8">
+                    <div class="timeline-item feature-card">
+                        <h3 class="text-xl font-bold mb-4 text-white">Project discovery</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            We understand your brand, themes, materials, sizing, deadlines, and volume.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item feature-card">
+                        <h3 class="text-xl font-bold mb-4 text-white">Curated art selection</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Your art consultant presents multiple collections aligned with your design direction.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item feature-card">
+                        <h3 class="text-xl font-bold mb-4 text-white">Sample approval (optional)</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            We send physical or digital proofs to maintain accuracy and consistency.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item feature-card">
+                        <h3 class="text-xl font-bold mb-4 text-white">Bulk production & QC</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Every item goes through strict color, quality, and durability checks.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item feature-card">
+                        <h3 class="text-xl font-bold mb-4 text-white">Logistics & installation support</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Packed, shipped, and delivered to one or multiple locations — ready to hang.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-16 animate-slide-in-up">
+                    <a href="#contact"
+                        class="bg-red-500 hover:bg-red-600 text-white text-lg px-10 py-4 rounded-full font-bold shadow-xl shadow-red-500/20 transition transform hover:-translate-y-1 hover-glow inline-block">
+                        Start Your Project
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why iCanvas Wins  -->
+    <section class="section-padding bg-black">
+        <div class="container mx-auto">
+            <div class="text-center mb-16 animate-slide-in-bottom">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Why iCanvas Wins Over Traditional Vendors
+                </h2>
+            </div>
+
+            <div class="comparison-table-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th class="text-left">Feature</th>
+                            <th class="text-center">Local Printers</th>
+                            <th class="text-center">Galleries</th>
+                            <th class="text-center">Overseas Vendors</th>
+                            <th class="text-center">iCanvas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-white font-medium">Bulk Capacity</td>
+                            <td class="text-gray-400">Low</td>
+                            <td class="text-gray-400">None</td>
+                            <td class="text-gray-400">Inconsistent</td>
+                            <td class="text-red-400 font-bold">High-volume optimized</td>
+                        </tr>
+                        <tr>
+                            <td class="text-white font-medium">Pricing</td>
+                            <td class="text-gray-400">Unpredictable</td>
+                            <td class="text-gray-400">Extremely high</td>
+                            <td class="text-gray-400">Cheap, low quality</td>
+                            <td class="text-red-400 font-bold">Scalable, fair bulk pricing</td>
+                        </tr>
+                        <tr>
+                            <td class="text-white font-medium">Design Curation</td>
+                            <td class="text-gray-400">None</td>
+                            <td class="text-gray-400">Limited</td>
+                            <td class="text-gray-400">None</td>
+                            <td class="text-red-400 font-bold">Dedicated design guidance</td>
+                        </tr>
+                        <tr>
+                            <td class="text-white font-medium">Catalog Size</td>
+                            <td class="text-gray-400">Very small</td>
+                            <td class="text-gray-400">Small</td>
+                            <td class="text-gray-400">None</td>
+                            <td class="text-red-400 font-bold">600,000+ artworks</td>
+                        </tr>
+                        <tr>
+                            <td class="text-white font-medium">Quality Guarantee</td>
+                            <td class="text-gray-400">No</td>
+                            <td class="text-gray-400">Partial</td>
+                            <td class="text-gray-400">None</td>
+                            <td class="text-red-400 font-bold">Full replacement guarantee</td>
+                        </tr>
+                        <tr>
+                            <td class="text-white font-medium">Lead Times</td>
+                            <td class="text-gray-400">Slow</td>
+                            <td class="text-gray-400">Slow</td>
+                            <td class="text-gray-400">Unreliable</td>
+                            <td class="text-red-400 font-bold">Fast, predictable timelines</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section-padding bg-gray-900">
+        <div class="container mx-auto max-w-3xl">
+            <h2 class="text-3xl font-bold mb-12 text-center text-white animate-slide-in-bottom">Common B2B Questions
+            </h2>
+            <div class="space-y-4">
+                <details class="faq-item group rounded-2xl overflow-hidden">
+                    <summary
+                        class="flex justify-between items-center font-semibold cursor-pointer list-none p-8 hover:bg-white/5 transition">
+                        <span class="text-white text-lg">Do you handle multi-location shipments?</span>
+                        <span class="transition group-open:rotate-180 text-red-400"><i
+                                class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-gray-400 px-8 pb-8 pt-2 border-t border-white/10">
+                        Yes — nationwide and international. We manage logistics across all your project sites with
+                        coordinated delivery schedules.
+                    </div>
+                </details>
+                <details class="faq-item group rounded-2xl overflow-hidden">
+                    <summary
+                        class="flex justify-between items-center font-semibold cursor-pointer list-none p-8 hover:bg-white/5 transition">
+                        <span class="text-white text-lg">How quickly can you produce bulk orders?</span>
+                        <span class="transition group-open:rotate-180 text-red-400"><i
+                                class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-gray-400 px-8 pb-8 pt-2 border-t border-white/10">
+                        Most projects ship within 7–21 days, depending on volume. We provide exact timelines during
+                        project planning.
+                    </div>
+                </details>
+                <details class="faq-item group rounded-2xl overflow-hidden">
+                    <summary
+                        class="flex justify-between items-center font-semibold cursor-pointer list-none p-8 hover:bg-white/5 transition">
+                        <span class="text-white text-lg">Can we use our own artwork?</span>
+                        <span class="transition group-open:rotate-180 text-red-400"><i
+                                class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-gray-400 px-8 pb-8 pt-2 border-t border-white/10">
+                        Absolutely — custom production is a major part of our B2B service. We handle everything from
+                        file preparation to final production.
+                    </div>
+                </details>
+                <details class="faq-item group rounded-2xl overflow-hidden">
+                    <summary
+                        class="flex justify-between items-center font-semibold cursor-pointer list-none p-8 hover:bg-white/5 transition">
+                        <span class="text-white text-lg">Do you work with procurement teams?</span>
+                        <span class="transition group-open:rotate-180 text-red-400"><i
+                                class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-gray-400 px-8 pb-8 pt-2 border-t border-white/10">
+                        Yes — we handle documentation, invoicing, and compliance requirements for corporate procurement
+                        processes.
+                    </div>
+                </details>
+                <details class="faq-item group rounded-2xl overflow-hidden">
+                    <summary
+                        class="flex justify-between items-center font-semibold cursor-pointer list-none p-8 hover:bg-white/5 transition">
+                        <span class="text-white text-lg">What if something arrives damaged?</span>
+                        <span class="transition group-open:rotate-180 text-red-400"><i
+                                class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-gray-400 px-8 pb-8 pt-2 border-t border-white/10">
+                        We replace it immediately at no additional cost. Our packaging is designed for commercial
+                        shipping, and damages are rare.
+                    </div>
+                </details>
+                <details class="faq-item group rounded-2xl overflow-hidden">
+                    <summary
+                        class="flex justify-between items-center font-semibold cursor-pointer list-none p-8 hover:bg-white/5 transition">
+                        <span class="text-white text-lg">Do you help with design selection?</span>
+                        <span class="transition group-open:rotate-180 text-red-400"><i
+                                class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-gray-400 px-8 pb-8 pt-2 border-t border-white/10">
+                        Yes — your project includes a dedicated design consultant who works with your team to select and
+                        curate artwork.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA  -->
+    <section id="contact" class="section-padding bg-black">
+        <div class="container mx-auto max-w-4xl">
+            <div
+                class="cta-card rounded-3xl p-12 text-center shadow-2xl border border-white/10 hover-glow animate-slide-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Bring Your Spaces to Life?</h2>
+                <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+                    Great art changes how people feel, move, and experience a space.
+                    Let's partner together to create commercial environments that inspire.
+                </p>
+                <p class="text-red-400 font-bold text-sm uppercase tracking-widest mb-8">4 project slots left for Q1
+                    2026</p>
+                <button
+                    class="bg-red-500 hover:bg-red-600 text-white text-lg px-10 py-4 rounded-full font-bold shadow-xl shadow-red-500/20 transition transform hover:-translate-y-1 hover-glow animate-pulse-glow">
+                    Book Your B2B Consultation
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="container mx-auto">
+            <div class="footer-container">
+                <div class="text-center lg:text-left mb-8 lg:mb-0">
+                    <div class="flex items-center gap-2 mb-4 justify-center lg:justify-start">
+                        <span class="text-3xl font-bold text-white tracking-tight">iCanvas</span>
+                        <span class="b2b-logo text-gray-300 px-2 py-1 rounded text-xs uppercase tracking-wider font-bold">Business</span>
+                    </div>
+                    <p class="text-sm">Premium Commercial Wall Art Solutions</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="text-center mb-6 lg:mb-0">
+                        <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                        <div class="grid grid-cols-1 gap-2 text-sm">
+                            <a href="#process" class="hover:text-red-400 transition block py-1">Process</a>
+                            <a href="#success" class="hover:text-red-400 transition block py-1">Client Success</a>
+                            <a href="#artists" class="hover:text-red-400 transition block py-1">Featured Artists</a>
+                            <a href="#testimonials" class="hover:text-red-400 transition block py-1">Testimonials</a>
+                            <a href="#faq" class="hover:text-red-400 transition block py-1">FAQs</a>
+                        </div>
+                    </div>
+
+                    <div class="text-center mb-6 lg:mb-0">
+                        <h4 class="text-white font-semibold mb-4">Legal</h4>
+                        <div class="flex flex-col gap-2 text-sm">
+                            <a href="#" class="hover:text-red-400 transition">Privacy Policy</a>
+                            <a href="#" class="hover:text-red-400 transition">Terms of Service</a>
+                            <a href="#" class="hover:text-red-400 transition">Contact Support</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-social">
+                    <div class="text-center">
+                        <h4 class="text-white font-semibold mb-4">Connect With Us</h4>
+                        <div class="flex justify-center gap-4">
+                            <a href="https://www.facebook.com/icanvasart" target="_blank"
+                                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-500 transition hover:text-white">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.instagram.com/icanvas_art/" target="_blank"
+                                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-500 transition hover:text-white">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/company/icanvas" target="_blank"
+                                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-500 transition hover:text-white">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+                <p>&copy; 2025 iCanvas Inc. All rights reserved. Commercial Art Solutions for Hospitality, Real Estate &
+                    Corporate Spaces</p>
+                <p class="mt-2 text-gray-500">Premium Wall Art Production Since 2006</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add animation classes on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.animate-slide-in-left, .animate-slide-in-right, .animate-slide-in-bottom, .animate-slide-in-up');
+
+            const elementObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            animatedElements.forEach(el => {
+                elementObserver.observe(el);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
