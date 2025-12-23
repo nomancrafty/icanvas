@@ -74,6 +74,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <style>
+        /* Base styles */
         body {
             font-family: 'Inter', sans-serif;
             margin: 0;
@@ -101,16 +102,32 @@
             }
         }
 
+        /* Navigation background - UPDATED */
         .nav-red-bg {
-            background: rgba(255, 83, 83, 0.05);
+            background: linear-gradient(
+                to bottom,
+                rgba(25, 25, 25, 0.98) 0%,
+                rgba(20, 20, 20, 0.95) 100%
+            );
             backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
         }
 
+        /* Navbar logo contrast - UPDATED */
+        .navbar-logo {
+            filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.4)) 
+                    drop-shadow(0 0 0.5px rgba(255, 255, 255, 0.2));
+            position: relative;
+        }
+
+        /* Hover glow effect */
         .hover-glow:hover {
             box-shadow: 0 0 30px rgba(255, 83, 83, 0.4);
             transform: translateY(-3px);
         }
 
+        /* Announcement card */
         .announcement-card {
             background: rgba(255, 83, 83, 0.1);
             backdrop-filter: blur(10px);
@@ -119,11 +136,13 @@
             margin: 0 auto;
         }
 
+        /* Section padding */
         .section-padding {
             padding-top: 6rem;
             padding-bottom: 6rem;
         }
 
+        /* Outcome highlight gradient text */
         .outcome-highlight {
             background: linear-gradient(90deg, #ff5353, #ff2b2b);
             -webkit-background-clip: text;
@@ -131,6 +150,7 @@
             background-clip: text;
         }
 
+        /* Timeline item styles */
         .timeline-item {
             position: relative;
             padding-left: 3rem;
@@ -169,7 +189,7 @@
             display: none;
         }
 
-        /* TABLE STYLES FOR MOBILE RESPONSIVENESS AND DESKTOP SPACING */
+        /* Comparison table styles */
         .comparison-table-container {
             overflow-x: auto;
             padding: 0;
@@ -181,19 +201,19 @@
 
         @media (min-width: 768px) {
             .comparison-table-container {
-                padding: 0 4rem; 
+                padding: 0 4rem;
             }
         }
 
         @media (min-width: 1024px) {
             .comparison-table-container {
-                padding: 0 6rem; 
+                padding: 0 6rem;
             }
         }
 
         @media (min-width: 1280px) {
             .comparison-table-container {
-                padding: 0 8rem; 
+                padding: 0 8rem;
             }
         }
 
@@ -277,6 +297,7 @@
             border-bottom-right-radius: 12px;
         }
 
+        /* FAQ item styles */
         .faq-item {
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(10px);
@@ -293,6 +314,7 @@
             animation: slideInUp 0.8s ease-out forwards;
         }
 
+        /* Stats item with shimmer effect */
         .stats-item {
             position: relative;
             overflow: hidden;
@@ -315,6 +337,7 @@
             }
         }
 
+        /* Feature card animation */
         .feature-card {
             opacity: 0;
             transform: translateY(50px);
@@ -324,6 +347,7 @@
             animation: slideInUp 0.8s ease-out forwards;
         }
 
+        /* Logo grid for trusted companies */
         .logo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -356,7 +380,7 @@
             animation: shimmer 3s infinite;
         }
 
-        /* HERO SECTION SPECIFIC STYLES */
+        /* Hero section specific styles */
         .hero-image-container {
             position: absolute;
             inset: 0;
@@ -388,14 +412,14 @@
             }
         }
 
-        /* Pain Points Card  */
+        /* Pain points card */
         .pain-points-card {
             background: rgba(255, 83, 83, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
         }
 
-        /* Real Project Outcomes - */
+        /* Real project outcomes */
         .outcome-item {
             margin-bottom: 4rem;
         }
@@ -409,41 +433,43 @@
             box-shadow: none !important;
         }
 
-        /* UPDATED: */
+        /* Artist card */
         .artist-card {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
         }
 
-        /* B2B Logo */
+        /* B2B logo badge */
         .b2b-logo {
             background: rgba(255, 83, 83, 0.1);
             border: 1px solid rgba(255, 83, 83, 0.2);
         }
 
-        /*  Final CTA Card  */
+        /* Final CTA card */
         .cta-card {
             background: rgba(255, 83, 83, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
         }
 
-        /* Footer Styles for Centering */
+        /* Footer Styles - UPDATED WITH LIGHTER BACKGROUND */
         .footer-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
             width: 100%;
+            min-height: 400px;
         }
 
         .footer-links {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             width: 100%;
-            margin: 2rem 0;
+            margin: 1rem 0;
         }
 
         .footer-social {
@@ -453,31 +479,106 @@
             margin-top: 2rem;
         }
 
+        /* Horizontal legal links container */
+        .legal-links-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            width: 100%;
+        }
+
+        /* Desktop styles for footer */
         @media (min-width: 1024px) {
             .footer-container {
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: flex-start;
                 text-align: left;
+                min-height: 320px;
             }
             
             .footer-links {
-                flex-direction: row;
-                justify-content: space-around;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
                 margin: 0;
+                border-left: 1px solid rgba(255, 255, 255, 0.15);
+                border-right: 1px solid rgba(255, 255, 255, 0.15);
+                padding: 0 3rem;
+                height: auto;
+                min-height: 250px;
             }
             
             .footer-social {
                 justify-content: flex-end;
                 margin-top: 0;
+                align-items: flex-start;
+                display: flex;
+                height: 200px;
+            }
+
+            .legal-links-container {
+                justify-content: center;
+                gap: 2.5rem;
+                margin-top: 2.5rem;
             }
         }
 
-        /*  Testimonials Card with red/white transparent look */
+        /* Mobile responsive adjustments */
+        @media (max-width: 1023px) {
+            footer {
+                padding-top: 3rem !important;
+                padding-bottom: 3rem !important;
+            }
+            
+            .footer-links {
+                padding: 1.5rem 0;
+            }
+            
+            .footer-container {
+                min-height: 450px;
+            }
+
+            .legal-links-container {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 1rem;
+                margin-top: 1.5rem;
+                padding-top: 1.5rem;
+            }
+        }
+
+        /* Testimonials card */
         .testimonial-card {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
+        }
+
+        /* Footer - UPDATED WITH LIGHTER BACKGROUND */
+        footer {
+            background: linear-gradient(
+                to bottom,
+                rgba(30, 30, 30, 0.98) 0%,
+                rgba(25, 25, 25, 0.96) 100%
+            );
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* Footer logo visibility - UPDATED */
+        footer .navbar-logo {
+            filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5)) 
+                    drop-shadow(0 0 1px rgba(255, 255, 255, 0.3));
+        }
+
+        /* B2B logo badge in footer - UPDATED */
+        footer .b2b-logo {
+            background: rgba(255, 83, 83, 0.15);
+            border: 1px solid rgba(255, 83, 83, 0.3);
         }
     </style>
 </head>
@@ -485,13 +586,11 @@
 <body class="antialiased">
 
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 nav-red-bg shadow-sm border-b border-white/10">
+    <nav class="sticky top-0 z-50 nav-red-bg shadow-sm">
         <div class="container mx-auto h-20 flex items-center justify-between">
             <div class="flex items-center gap-2">
-                <!-- Simple Logo Representation -->
-                <span class="text-3xl font-bold tracking-tight text-red-400">iCanvas</span>
-                <span
-                    class="b2b-logo text-gray-300 px-2 py-1 rounded text-xs uppercase tracking-wider font-bold mt-1">Business</span>
+                <!-- Logo -->
+                <img src="./assets/logo.svg" alt="iCanvas" class="navbar-logo h-14 md:h-16 lg:h-20 object-contain" />
             </div>
 
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
@@ -503,8 +602,6 @@
             </div>
 
             <div class="flex items-center gap-4">
-                <a href="#contact" class="hidden md:block text-red-400 font-semibold hover:text-red-300 transition">Sign
-                    In</a>
                 <a href="#contact"
                     class="hidden md:block bg-red-500 hover:bg-red-600 text-white px-6 py-2.5 rounded-full font-medium transition shadow-lg shadow-red-500/20 hover-glow">
                     Book Consultation
@@ -523,7 +620,6 @@
             <a href="#testimonials" class="text-gray-300 font-medium hover:text-red-400">Testimonials</a>
             <a href="#faq" class="text-gray-300 font-medium hover:text-red-400">FAQs</a>
             <hr class="border-gray-800">
-            <a href="#contact" class="text-red-400 font-semibold">Sign In</a>
             <a href="#contact"
                 class="bg-red-500 text-white px-6 py-3 rounded-full font-medium text-center shadow-lg hover-glow">Book
                 Consultation</a>
@@ -531,6 +627,7 @@
     </nav>
 
     <script>
+        // Mobile menu toggle
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
 
@@ -578,14 +675,7 @@
     </script>
 
     <!-- HERO SECTION -->
-    <header class="relative overflow-hidden min-h-[90vh] md:min-h-screen">
-
-        <!-- Background Image with Overlay -->
-        <div class="hero-image-container">
-            <img src="./assets/Hero-image1.png" alt="Modern Art in Commercial Space">
-            <div class="hero-overlay"></div>
-        </div>
-        
+    <header class="relative overflow-hidden min-h-[90vh] md:min-h-screen flex flex-col">
         <!-- Announcement Bar -->
         <div class="pt-2 md:pt-2 pb-2 md:pb-2">
             <div class="announcement-card rounded-2xl px-4 md:px-8 py-2 md:py-3 mx-auto animate-slide-in-bottom">
@@ -601,7 +691,7 @@
             </div>
         </div>
 
-        <div class="container mx-auto py-4 md:py-8 lg:py-12 relative z-10">
+        <div class="container mx-auto py-4 md:py-8 lg:py-12 relative z-10 flex-1 flex items-center justify-center text-center">
             <div class="max-w-2xl">
                 <h5 class="text-red-400 font-bold uppercase tracking-widest text-sm mb-2 md:mb-3 animate-slide-in-left">iCanvas
                     for Business</h5>
@@ -626,7 +716,7 @@
                 <!-- Button -->
                 <div class="flex flex-col sm:flex-row gap-4 mb-6 md:mb-8 animate-slide-in-bottom">
                     <a href="#contact"
-                        class="bg-red-500 hover:bg-red-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-center transition shadow-xl shadow-red-500/20 hover-glow animate-pulse-glow inline-block w-fit sm:w-auto mx-auto sm:mx-0">
+                        class="bg-red-500 hover:bg-red-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-center transition shadow-xl shadow-red-500/20 hover-glow animate-pulse-glow inline-block w-fit sm:w-auto mx-auto">
                         Book Art Consultation
                     </a>
                 </div>
@@ -663,7 +753,6 @@
                 <div class="logo-placeholder">logo</div>
                 <div class="logo-placeholder">logo</div>
                 <div class="logo-placeholder">logo</div>
-               
             </div>
         </div>
     </section>
@@ -839,7 +928,7 @@
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <div class="animate-slide-in-left">
                         <h3 class="text-4xl font-bold mb-6 text-white">
-                            Hospitality Group <br> 
+                            Hospitality Group <br>
                             <span class="text-red-400 font-bold text-2xl animate-pulse-glow">145+ Units</span>
                         </h3>
                         <p class="text-gray-300 leading-relaxed text-xl">
@@ -862,7 +951,7 @@
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <div class="animate-slide-in-right lg:order-2">
                         <h3 class="text-4xl font-bold mb-6 text-white">
-                            Corporate Office Expansion <br> 
+                            Corporate Office Expansion <br>
                             <span class="text-red-400 font-bold text-2xl animate-pulse-glow">9 Locations</span>
                         </h3>
                         <p class="text-gray-300 leading-relaxed text-xl">
@@ -885,7 +974,7 @@
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <div class="animate-slide-in-left">
                         <h3 class="text-4xl font-bold mb-6 text-white">
-                            Luxury Apartment Complex <br> 
+                            Luxury Apartment Complex <br>
                             <span class="text-red-400 font-bold text-2xl animate-pulse-glow">380 Units</span>
                         </h3>
                         <p class="text-gray-300 leading-relaxed text-xl">
@@ -908,7 +997,7 @@
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <div class="animate-slide-in-right lg:order-2">
                         <h3 class="text-4xl font-bold mb-6 text-white">
-                            Boutique Hotel Chain <br> 
+                            Boutique Hotel Chain <br>
                             <span class="text-red-400 font-bold text-2xl animate-pulse-glow">7 Properties</span>
                         </h3>
                         <p class="text-gray-300 leading-relaxed text-xl">
@@ -1036,7 +1125,7 @@
                     </div>
                     <h3 class="text-2xl font-bold text-white mb-4">Client Testimonials </h3>
                     <p class="text-gray-400 max-w-2xl mx-auto">
-                       testimonials space for later 
+                       testimonials space for later
                     </p>
                 </div>
             </div>
@@ -1269,22 +1358,24 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+    <!-- Footer - UPDATED WITH LIGHTER BACKGROUND -->
+    <footer class="text-gray-400 py-12">
         <div class="container mx-auto">
             <div class="footer-container">
-                <div class="text-center lg:text-left mb-8 lg:mb-0">
+                <!-- Left: Logo and company info -->
+                <div class="text-center lg:text-left mb-8 lg:mb-0 lg:w-1/4">
                     <div class="flex items-center gap-2 mb-4 justify-center lg:justify-start">
-                        <span class="text-3xl font-bold text-white tracking-tight">iCanvas</span>
-                        <span class="b2b-logo text-gray-300 px-2 py-1 rounded text-xs uppercase tracking-wider font-bold">Business</span>
+                        <img src="./assets/logo.svg" alt="iCanvas" class="navbar-logo h-12 md:h-14 lg:h-16 object-contain" />
                     </div>
                     <p class="text-sm">Premium Commercial Wall Art Solutions</p>
                 </div>
 
-                <div class="footer-links">
-                    <div class="text-center mb-6 lg:mb-0">
-                        <h4 class="text-white font-semibold mb-4">Quick Links</h4>
-                        <div class="grid grid-cols-1 gap-2 text-sm">
+                <!-- Center: Quick Links (Vertical) - Perfectly centered -->
+                <div class="footer-links flex justify-center items-center w-full lg:w-1/2 py-4">
+                    <div class="text-center">
+                        <h4 class="text-white font-semibold mb-6 text-lg">Quick Links</h4>
+                        <!-- Main vertical links -->
+                        <div class="flex flex-col gap-3 text-sm mb-6">
                             <a href="#process" class="hover:text-red-400 transition block py-1">Process</a>
                             <a href="#success" class="hover:text-red-400 transition block py-1">Client Success</a>
                             <a href="#artists" class="hover:text-red-400 transition block py-1">Featured Artists</a>
@@ -1292,18 +1383,10 @@
                             <a href="#faq" class="hover:text-red-400 transition block py-1">FAQs</a>
                         </div>
                     </div>
-
-                    <div class="text-center mb-6 lg:mb-0">
-                        <h4 class="text-white font-semibold mb-4">Legal</h4>
-                        <div class="flex flex-col gap-2 text-sm">
-                            <a href="#" class="hover:text-red-400 transition">Privacy Policy</a>
-                            <a href="#" class="hover:text-red-400 transition">Terms of Service</a>
-                            <a href="#" class="hover:text-red-400 transition">Contact Support</a>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="footer-social">
+                <!-- Right: Social Links -->
+                <div class="footer-social lg:w-1/4 lg:flex lg:items-start lg:justify-end">
                     <div class="text-center">
                         <h4 class="text-white font-semibold mb-4">Connect With Us</h4>
                         <div class="flex justify-center gap-4">
@@ -1324,6 +1407,16 @@
                 </div>
             </div>
 
+            <!-- Horizontal Legal Links - Centered Below Main Content -->
+            <div class="legal-links-container">
+                <a href="#" class="hover:text-red-400 transition text-sm">Privacy Policy</a>
+                <span class="text-gray-600">•</span>
+                <a href="#" class="hover:text-red-400 transition text-sm">Terms of Service</a>
+                <span class="text-gray-600">•</span>
+                <a href="#" class="hover:text-red-400 transition text-sm">Contact Support</a>
+            </div>
+
+            <!-- Copyright section -->
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
                 <p>&copy; 2025 iCanvas Inc. All rights reserved. Commercial Art Solutions for Hospitality, Real Estate &
                     Corporate Spaces</p>
