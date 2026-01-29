@@ -80,45 +80,199 @@
         }
     </script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* FT Kunst Grotesk Custom Font Registration */
-        @font-face {
-            font-family: 'FT Kunst Grotesk';
-            src: url('./assets/fonts/FTKunstGroteskTrial-Regular.woff2') format('woff2'),
-                 url('./assets/fonts/FTKunstGroteskTrial-Regular.woff') format('woff');
-            font-weight: 400;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'FT Kunst Grotesk';
-            src: url('./assets/fonts/FTKunstGroteskTrial-Medium.woff2') format('woff2'),
-                 url('./assets/fonts/FTKunstGroteskTrial-Medium.woff') format('woff');
-            font-weight: 500;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'FT Kunst Grotesk';
-            src: url('./assets/fonts/FTKunstGroteskTrial-Bold.woff2') format('woff2'),
-                 url('./assets/fonts/FTKunstGroteskTrial-Bold.woff') format('woff');
-            font-weight: 700;
-            font-display: swap;
-        }
-
-        /* Font imports for Outgo Regular */
-        @import url('https://fonts.cdnfonts.com/css/outgo');
+        /* =========================================== */
+        /* SINGLE FONT IMPORT - FT KUNST GROTESK ONLY */
+        /* =========================================== */
         
-        /* Base styles */
+        /* FT Kunst Grotesk Regular - FOR ALL TEXT */
+        @font-face {
+            font-family: 'FTKunstGrotesk';
+            src: url('./assets/fonts/FTKunstGrotesk-Regular.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* =========================================== */
+        /* BASE STYLES WITH SINGLE FONT */
+        /* =========================================== */
+        
+        /* Base body font - FT Kunst Grotesk for ALL text */
+        body, h1, h2, h3, h4, h5, h6, p, li, span, a, button, input, textarea, label, th, td {
+            font-family: 'FTKunstGrotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        /* Main body text - Regular weight */
         body {
-            font-family: 'Inter', sans-serif;
+            font-weight: 400;
             margin: 0;
             padding: 0;
             background-color: #F6F6F0;
             color: #222222;
+            line-height: 1.6;
         }
 
+        /* HEADINGS WITH DIFFERENT WEIGHTS AND SIZES */
+        h1 {
+            font-size: 3rem; /* 48px */
+            font-weight: 700; /* Bold for main titles */
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 2.5rem; /* 40px */
+            font-weight: 600; /* Semi-bold for section titles */
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: 2rem; /* 32px */
+            font-weight: 600; /* Semi-bold */
+            line-height: 1.3;
+        }
+
+        h4 {
+            font-size: 1.5rem; /* 24px */
+            font-weight: 500; /* Medium */
+            line-height: 1.3;
+        }
+
+        h5 {
+            font-size: 1.125rem; /* 18px */
+            font-weight: 500; /* Medium */
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        h6 {
+            font-size: 1rem; /* 16px */
+            font-weight: 500; /* Medium */
+        }
+
+        /* Paragraphs */
+        p {
+            font-size: 1.125rem; /* 18px */
+            font-weight: 400; /* Regular */
+            line-height: 1.6;
+        }
+
+        /* Small text */
+        small, .text-sm {
+            font-size: 0.875rem; /* 14px */
+            font-weight: 400;
+        }
+
+        /* Medium text */
+        .text-md {
+            font-size: 1rem; /* 16px */
+            font-weight: 400;
+        }
+
+        /* Large text */
+        .text-lg {
+            font-size: 1.25rem; /* 20px */
+            font-weight: 400;
+        }
+
+        /* Extra large text */
+        .text-xl {
+            font-size: 1.5rem; /* 24px */
+            font-weight: 400;
+        }
+
+        /* FONT WEIGHT CLASSES */
+        .font-thin { font-weight: 300; }
+        .font-normal { font-weight: 400; }
+        .font-medium { font-weight: 500; }
+        .font-semibold { font-weight: 600; }
+        .font-bold { font-weight: 700; }
+
+        /* Navigation links */
+        nav a {
+            font-weight: 500; /* Medium weight for nav */
+        }
+
+        /* Buttons */
+        button, .btn, a[href="#contact"] {
+            font-weight: 500; /* Medium weight for buttons */
+        }
+
+        /* Comparison table */
+        .comparison-table th {
+            font-weight: 600; /* Semi-bold for table headers */
+        }
+
+        .comparison-table td {
+            font-weight: 400; /* Regular for table content */
+        }
+
+        .comparison-table td:first-child {
+            font-weight: 500; /* Medium for first column */
+        }
+
+        /* FAQ items */
+        .faq-item summary {
+            font-weight: 500; /* Medium for FAQ questions */
+        }
+
+        .faq-item div {
+            font-weight: 400; /* Regular for FAQ answers */
+        }
+
+        /* Testimonial cards */
+        .testimonial-card span {
+            font-weight: 500; /* Medium for names */
+        }
+
+        .testimonial-card p {
+            font-weight: 400; /* Regular for testimonial text */
+        }
+
+        /* Value proposition cards */
+        .value-prop p {
+            font-weight: 500; /* Medium for value prop titles */
+        }
+
+        /* Badges and labels */
+        .badge, .tag, .announcement-card span {
+            font-weight: 500; /* Medium for badges */
+        }
+
+        /* Footer */
+        footer h4 {
+            font-weight: 500; /* Medium for footer headings */
+        }
+
+        footer p, footer a {
+            font-weight: 400; /* Regular for footer text */
+        }
+
+        /* Responsive font sizes */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.25rem; /* 36px on mobile */
+            }
+            
+            h2 {
+                font-size: 2rem; /* 32px on mobile */
+            }
+            
+            h3 {
+                font-size: 1.75rem; /* 28px on mobile */
+            }
+            
+            p {
+                font-size: 1rem; /* 16px on mobile */
+            }
+        }
+
+        /* =========================================== */
+        /* REST OF THE STYLES (UNCHANGED) */
+        /* =========================================== */
+        
         .container {
             padding-left: 1rem;
             padding-right: 1rem;
@@ -272,7 +426,6 @@
 
         .comparison-table th {
             padding: 1rem;
-            font-weight: bold;
             text-align: center;
             border: none;
             font-size: 0.875rem;
@@ -314,7 +467,6 @@
 
         .comparison-table td:first-child {
             text-align: left;
-            font-weight: 500;
             min-width: 150px;
             color: #222222;
         }
@@ -401,7 +553,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 600;
             color: rgba(0, 0, 0, 0.3);
             position: relative;
             overflow: hidden;
@@ -418,7 +569,7 @@
             animation: shimmer 3s infinite;
         }
 
-        /* Logo carousel styles */
+        /* Logo carousel styles - FIXED VERSION */
         .logo-carousel-container {
             overflow: hidden;
             width: 100%;
@@ -428,18 +579,44 @@
         .logo-carousel-track {
             display: flex;
             padding: 1rem 0;
-            animation: scroll-left 8s linear infinite;
             will-change: transform;
         }
 
-        .logo-carousel-track .logo-placeholder {
+        .logo-carousel-track .logo-item {
             flex-shrink: 0;
-            width: 150px;
-            height: 70px;
-            margin: 0 1.5rem;
+            width: 180px;
+            height: 80px;
+            margin: 0 2rem;
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        .logo-carousel-track .logo-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(100%) brightness(0) opacity(0.7);
+            transition: all 0.3s ease;
+        }
+
+        .logo-carousel-track .logo-item img:hover {
+            filter: grayscale(0) brightness(1) opacity(1);
+            transform: scale(1.05);
+        }
+
+        /* Desktop speed (50s) */
+        @media (min-width: 768px) {
+            .logo-carousel-track {
+                animation: scroll-left 50s linear infinite;
+            }
+        }
+
+        /* Mobile speed (faster - 30s) */
+        @media (max-width: 767px) {
+            .logo-carousel-track {
+                animation: scroll-left 30s linear infinite;
+            }
         }
 
         @keyframes scroll-left {
@@ -447,10 +624,14 @@
                 transform: translateX(0);
             }
             100% {
-                transform: translateX(calc(-50%));
+                transform: translateX(calc(-180px * 17));
             }
         }
-        
+
+        /* Carousel pause on hover */
+        .logo-carousel-container:hover .logo-carousel-track {
+            animation-play-state: paused;
+        }
 
         /* Hero section specific styles - UPDATED FOR LIGHT THEME */
         .hero-image-container {
@@ -549,34 +730,6 @@
             border: 1px solid rgba(255, 83, 83, 0.25);
         }
 
-        /* Apply brand fonts to specific elements */
-        .brand-heading {
-            font-family: 'FT Kunst Grotesk', 'Inter', sans-serif;
-        }
-        
-        .brand-subheading {
-            font-family: 'Outgo Regular', 'Inter', sans-serif;
-        }
-
-        /* Typography Rules with FT Kunst Grotesk */
-        h1 {
-            font-family: 'FT Kunst Grotesk', 'Inter', sans-serif;
-            font-weight: 700;
-        }
-
-        h2,
-        h3 {
-            font-family: 'FT Kunst Grotesk', 'Inter', sans-serif;
-            font-weight: 500;
-        }
-
-        p,
-        li,
-        span {
-            font-family: 'FT Kunst Grotesk', 'Inter', sans-serif;
-            font-weight: 400;
-        }
-
         /* Text colors for light theme */
         .text-dark {
             color: #222222;
@@ -653,7 +806,7 @@
             height: 380px;
             display: flex;
             flex-direction: column;
-            width: 95%; /* Increased width */
+            width: 95%;
             min-width: 95%;
             margin: 0 0.5rem;
             position: relative;
@@ -811,10 +964,10 @@
             <div class="announcement-card rounded-2xl px-4 md:px-8 py-2 md:py-3 mx-auto animate-slide-in-bottom">
                 <div class="flex items-center justify-center gap-2 md:gap-3 flex-wrap md:flex-nowrap">
                     <span class="w-2 h-2 md:w-3 md:h-3 bg-red-500 rounded-full animate-pulse"></span>
-                    <span class="mobile-announcement-text text-xs md:text-sm font-semibold tracking-wide text-dark">4 project slots left for Q1 2026</span>
+                    <span class="mobile-announcement-text text-xs md:text-sm font-medium tracking-wide text-dark">4 project slots left for Q1 2026</span>
                     <span class="w-2 h-2 md:w-3 md:h-3 bg-red-500 rounded-full animate-pulse"></span>
                     <a href="#contact"
-                        class="mobile-announcement-link text-dark hover:text-red-600 font-bold transition-all duration-300 hover:scale-105 text-xs md:text-sm whitespace-nowrap">
+                        class="mobile-announcement-link text-dark hover:text-red-600 font-medium transition-all duration-300 hover:scale-105 text-xs md:text-sm whitespace-nowrap">
                         Book a strategy call →
                     </a>
                 </div>
@@ -823,9 +976,9 @@
 
         <div class="container mx-auto py-4 md:py-8 lg:py-12 relative z-10 flex-1 flex items-center justify-center text-center">
             <div class="max-w-2xl">
-                <h5 class="text-red-500 font-bold uppercase tracking-widest text-sm mb-2 md:mb-3 animate-slide-in-left brand-subheading">iCanvas for Corporate Art</h5>
+                <h5 class="text-red-500 font-medium uppercase tracking-widest text-sm mb-2 md:mb-3 animate-slide-in-left">iCanvas for Corporate Art</h5>
                 <h1
-                    class="text-3xl md:text-4xl lg:text-6xl font-bold text-dark leading-tight mb-3 md:mb-4 animate-slide-in-left brand-heading">
+                    class="text-3xl md:text-4xl lg:text-6xl font-bold text-dark leading-tight mb-3 md:mb-4 animate-slide-in-left">
                     Premium Wall Art for<br>
                     <span class="text-red-500">Designed Commercial Spaces</span>
                 </h1>
@@ -833,7 +986,7 @@
                 <!-- Badge -->
                 <div
                     class="inline-flex items-center gap-2 bg-red-500/10 px-3 md:px-4 py-1 md:py-2 rounded-full mb-4 md:mb-6 border border-red-500/20 animate-slide-in-bottom">
-                    <span class="text-xs md:text-sm font-semibold text-dark">Since 2006</span>
+                    <span class="text-xs md:text-sm font-medium text-dark">Since 2006</span>
                 </div>
                 
                 <p class="text-base md:text-lg text-medium mb-4 md:mb-6 leading-relaxed animate-slide-in-left">
@@ -843,7 +996,7 @@
                 <!-- CTA Button -->
                 <div class="flex flex-col sm:flex-row gap-4 mb-6 md:mb-8 animate-slide-in-bottom">
                     <a href="#contact"
-                        class="bg-red-500 hover:bg-red-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-center transition shadow-xl shadow-red-500/20 hover-glow animate-pulse-glow inline-block w-fit sm:w-auto mx-auto">
+                        class="bg-red-500 hover:bg-red-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-medium text-center transition shadow-xl shadow-red-500/20 hover-glow animate-pulse-glow inline-block w-fit sm:w-auto mx-auto">
                         Book Art Consultation
                     </a>
                 </div>
@@ -854,43 +1007,138 @@
                         <div class="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-hand-holding-heart text-red-500 text-xl"></i>
                         </div>
-                        <p class="text-lg font-bold text-dark mb-2">Handcrafted in the USA</p>
+                        <p class="text-lg font-medium text-dark mb-2">Handcrafted in the USA</p>
                     </div>
                     <div class="text-center p-4 bg-white rounded-xl shadow-sm border border-gray-100">
                         <div class="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-star text-red-500 text-xl"></i>
                         </div>
-                        <p class="text-lg font-bold text-dark mb-2">49,000+ 5-Star Reviews</p>
+                        <p class="text-lg font-medium text-dark mb-2">49,000+ 5-Star Reviews</p>
                     </div>
                     <div class="text-center p-4 bg-white rounded-xl shadow-sm border border-gray-100">
                         <div class="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-tags text-red-500 text-xl"></i>
                         </div>
-                        <p class="text-lg font-bold text-dark mb-2">Volume Based Discounts</p>
+                        <p class="text-lg font-medium text-dark mb-2">Volume Based Discounts</p>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Trusted By -->
+    <!-- Trusted By - UPDATED WITH REAL LOGOS -->
     <section class="py-16 border-b border-gray-200 bg-white overflow-hidden">
         <div class="container mx-auto">
-            <p
-                class="text-center text-medium text-sm font-semibold uppercase tracking-widest mb-8 animate-slide-in-bottom">
-                Companies we've partnered with</p>
+            <p class="text-center text-medium text-sm font-medium uppercase tracking-widest mb-8 animate-slide-in-bottom">
+                Companies we've partnered with
+            </p>
             <div class="logo-carousel-container">
                 <div class="logo-carousel-track" id="logoCarousel">
-                    <!-- First set of logos -->
-                    <div class="logo-placeholder">Company Logo</div>
-                    <div class="logo-placeholder">Company Logo</div>
-                    <div class="logo-placeholder">Company Logo</div>
-                    <div class="logo-placeholder">Company Logo</div>
+                    <!-- Original 17 Logos -->
+                    <div class="logo-item">
+                        <img src="./assets/Images/Barefoot Beach Club.png" alt="Barefoot Beach Club">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/Bayfront Interior Resources.png" alt="Bayfront Interior Resources">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/Blistex_Inc.png" alt="Blistex Inc">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/BW-Best Western Hotel Y Resorts.png" alt="Best Western Hotel & Resorts">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/EvensBest.png" alt="EvensBest">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/Golden State Farm Credit.png" alt="Golden State Farm Credit">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/GREYSTAR.png" alt="GREYSTAR">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/Lindora.png" alt="Lindora">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/MIT.png" alt="MIT">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/Palmetto Infusion.png" alt="Palmetto Infusion">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/Puffer Malarkey Collective.png" alt="Puffer Malarkey Collective">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/Riverside_Casino_&_Resort.png" alt="Riverside Casino & Resort">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/RYBAK Development.png" alt="RYBAK Development">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/Stretch_Lab.png" alt="Stretch Lab">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/Venterra Realty.png" alt="Venterra Realty">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/Western_Development.png" alt="Western Development">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/Xponential_Fitness.png" alt="Xponential Fitness">
+                    </div>
+                    
                     <!-- Duplicated set for seamless loop -->
-                    <div class="logo-placeholder">Company Logo</div>
-                    <div class="logo-placeholder">Company Logo</div>
-                    <div class="logo-placeholder">Company Logo</div>
-                    <div class="logo-placeholder">Company Logo</div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/Barefoot Beach Club.png" alt="Barefoot Beach Club">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/Bayfront Interior Resources.png" alt="Bayfront Interior Resources">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/Blistex_Inc.png" alt="Blistex Inc">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/BW-Best Western Hotel Y Resorts.png" alt="Best Western Hotel & Resorts">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/EvensBest.png" alt="EvensBest">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/Golden State Farm Credit.png" alt="Golden State Farm Credit">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/GREYSTAR.png" alt="GREYSTAR">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/Lindora.png" alt="Lindora">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/MIT.png" alt="MIT">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/Palmetto Infusion.png" alt="Palmetto Infusion">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/Puffer Malarkey Collective.png" alt="Puffer Malarkey Collective">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/Riverside_Casino_&_Resort.png" alt="Riverside Casino & Resort">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/RYBAK Development.png" alt="RYBAK Development">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/Stretch_Lab.png" alt="Stretch Lab">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/Venterra Realty.png" alt="Venterra Realty">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/Western_Development.png" alt="Western Development">
+                    </div>
+                    <div class="logo-item">
+                        <img src="./assets/Images/Xponential_Fitness.png" alt="Xponential Fitness">
+                    </div>
                 </div>
             </div>
         </div>
@@ -903,57 +1151,57 @@
                 <div
                     class="pain-points-card rounded-3xl p-8 md:p-12 shadow-lg hover-glow animate-slide-in-bottom">
                     <div class="text-center mb-8">
-                        <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 brand-heading">Why traditional art vendors fall short</h2>
-                        <p class="text-red-500 font-bold text-lg mb-8">Most art vendors are not built to support large commercial projects</p>
+                        <h2 class="text-3xl md:text-4xl font-semibold text-dark mb-4">Why traditional art vendors fall short</h2>
+                        <p class="text-red-500 font-medium text-lg mb-8">Most art vendors are not built to support large commercial projects</p>
                     </div>
 
                     <div class="grid md:grid-cols-2 gap-6 mb-8">
                         <div class="flex items-start gap-3">
                             <span class="text-red-500 text-xl">❌</span>
                             <div>
-                                <h4 class="font-bold text-dark">Slow and unreliable lead times</h4>
+                                <h4 class="font-medium text-dark">Slow and unreliable lead times</h4>
                                 <p class="text-medium text-sm mt-1">Delays that disrupt project schedules</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
                             <span class="text-red-500 text-xl">❌</span>
                             <div>
-                                <h4 class="font-bold text-dark">Inconsistent quality and craftsmanship</h4>
+                                <h4 class="font-medium text-dark">Inconsistent quality and craftsmanship</h4>
                                 <p class="text-medium text-sm mt-1">Varying standards across orders</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
                             <span class="text-red-500 text-xl">❌</span>
                             <div>
-                                <h4 class="font-bold text-dark">Unpredictable pricing</h4>
+                                <h4 class="font-medium text-dark">Unpredictable pricing</h4>
                                 <p class="text-medium text-sm mt-1">Hidden costs and fluctuating rates</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
                             <span class="text-red-500 text-xl">❌</span>
                             <div>
-                                <h4 class="font-bold text-dark">Limited Catalog</h4>
+                                <h4 class="font-medium text-dark">Limited Catalog</h4>
                                 <p class="text-medium text-sm mt-1">Insufficient options for commercial projects</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
                             <span class="text-red-500 text-xl">❌</span>
                             <div>
-                                <h4 class="font-bold text-dark">No dedicated project support</h4>
+                                <h4 class="font-medium text-dark">No dedicated project support</h4>
                                 <p class="text-medium text-sm mt-1">Lack of specialized assistance</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
                             <span class="text-red-500 text-xl">❌</span>
                             <div>
-                                <h4 class="font-bold text-dark">Products that don't hold up over time</h4>
+                                <h4 class="font-medium text-dark">Products that don't hold up over time</h4>
                                 <p class="text-medium text-sm mt-1">Poor durability in commercial settings</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="text-center pt-8 border-t border-red-500/20">
-                        <p class="text-xl font-bold text-dark">Commercial spaces deserve art solutions built for reliability, consistency, and scale.</p>
+                        <p class="text-xl font-medium text-dark">Commercial spaces deserve art solutions built for reliability, consistency, and scale.</p>
                     </div>
                 </div>
             </div>
@@ -965,15 +1213,15 @@
         <div class="container mx-auto">
             <div class="flex flex-col lg:flex-row gap-16 items-center">
                 <div class="lg:w-1/2 animate-slide-in-left">
-                    <h2 class="text-4xl font-bold mb-6 text-dark brand-heading">The iCanvas Corporate Art Services</h2>
+                    <h2 class="text-4xl font-semibold mb-6 text-dark">The iCanvas Corporate Art Services</h2>
                     <p class="text-lg text-medium mb-8">We built a seamless, end to end art solution designed specifically for commercial interiors.</p>
 
                     <ul class="space-y-8">
                         <li class="flex gap-4">
                             <span
-                                class="flex-shrink-0 w-10 h-10 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center font-bold text-xl">1</span>
+                                class="flex-shrink-0 w-10 h-10 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center font-medium text-xl">1</span>
                             <div>
-                                <h4 class="font-bold text-dark text-xl mb-2">Scalable US Based Production</h4>
+                                <h4 class="font-medium text-dark text-xl mb-2">Scalable US Based Production</h4>
                                 <p class="text-medium">
                                     From small rollouts to large scale projects, we deliver consistent quality, dependable timelines, volume friendly pricing, and secure shipping.
                                 </p>
@@ -981,9 +1229,9 @@
                         </li>
                         <li class="flex gap-4">
                             <span
-                                class="flex-shrink-0 w-10 h-10 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center font-bold text-xl">2</span>
+                                class="flex-shrink-0 w-10 h-10 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center font-medium text-xl">2</span>
                             <div>
-                                <h4 class="font-bold text-dark text-xl mb-2">500k+ Art Collection</h4>
+                                <h4 class="font-medium text-dark text-xl mb-2">500k+ Art Collection</h4>
                                 <p class="text-medium">
                                     Curate from an expansive collection spanning every style and subject, and exclusive artist works to complement any aesthetic.
                                 </p>
@@ -991,9 +1239,9 @@
                         </li>
                         <li class="flex gap-4">
                             <span
-                                class="flex-shrink-0 w-10 h-10 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center font-bold text-xl">3</span>
+                                class="flex-shrink-0 w-10 h-10 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center font-medium text-xl">3</span>
                             <div>
-                                <h4 class="font-bold text-dark text-xl mb-2">Custom Art, Same museum quality</h4>
+                                <h4 class="font-medium text-dark text-xl mb-2">Custom Art, Same museum quality</h4>
                                 <p class="text-medium">
                                     Bring branded and bespoke concepts to life through custom artwork, multi piece series, and oversized formats.
                                 </p>
@@ -1001,9 +1249,9 @@
                         </li>
                         <li class="flex gap-4">
                             <span
-                                class="flex-shrink-0 w-10 h-10 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center font-bold text-xl">4</span>
+                                class="flex-shrink-0 w-10 h-10 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center font-medium text-xl">4</span>
                             <div>
-                                <h4 class="font-bold text-dark text-xl mb-2">Museum Quality Craftsmanship Built to Last</h4>
+                                <h4 class="font-medium text-dark text-xl mb-2">Museum Quality Craftsmanship Built to Last</h4>
                                 <p class="text-medium">
                                     Premium materials, UV resistant inks, warp resistant framing, and controlled production ensure durability and color consistency across every order.
                                 </p>
@@ -1011,9 +1259,9 @@
                         </li>
                         <li class="flex gap-4">
                             <span
-                                class="flex-shrink-0 w-10 h-10 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center font-bold text-xl">5</span>
+                                class="flex-shrink-0 w-10 h-10 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center font-medium text-xl">5</span>
                             <div>
-                                <h4 class="font-bold text-dark text-xl mb-2">Dedicated B2B Project Support</h4>
+                                <h4 class="font-medium text-dark text-xl mb-2">Dedicated B2B Project Support</h4>
                                 <p class="text-medium">
                                     Work directly with a commercial art specialist who manages curating, sourcing, pricing, production, multi site fulfillment, and long term support.
                                 </p>
@@ -1042,29 +1290,29 @@
     <section id="success" class="section-padding bg-F6F6F0">
         <div class="container mx-auto">
             <div class="text-center mb-16 animate-slide-in-bottom">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 brand-heading">Real Project Outcomes</h2>
+                <h2 class="text-3xl md:text-4xl font-semibold text-dark mb-4">Real Project Outcomes</h2>
             </div>
 
             <div class="space-y-20">
                 <!-- Outcome -->
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <div class="animate-slide-in-left">
-                        <h3 class="text-3xl font-bold mb-4 text-dark">
+                        <h3 class="text-3xl font-semibold mb-4 text-dark">
                             Franchise Expansion
                         </h3>
-                        <p class="text-red-500 font-bold text-xl mb-6">35+ locations launched nationwide</p>
+                        <p class="text-red-500 font-medium text-xl mb-6">35+ locations launched nationwide</p>
                         <p class="text-medium leading-relaxed text-lg mb-4">
                             Developed standardized franchisee art kits that aligned with brand aesthetics while ensuring consistent availability and scalability across a projected five year expansion.
                         </p>
                         <div class="bg-red-500/10 p-4 rounded-lg border border-red-500/20">
-                            <p class="font-bold text-dark">Eliminated design and sourcing time for all franchises</p>
+                            <p class="font-medium text-dark">Eliminated design and sourcing time for all franchises</p>
                         </div>
                     </div>
                     <div class="animate-slide-in-right">
                         <div class="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 border border-gray-200 h-80 flex items-center justify-center hover-glow">
                             <div class="text-center">
                                 <i class="fas fa-store text-red-500 text-7xl mb-6"></i>
-                                <p class="text-dark text-xl font-semibold">Franchise Expansion</p>
+                                <p class="text-dark text-xl font-medium">Franchise Expansion</p>
                             </div>
                         </div>
                     </div>
@@ -1073,22 +1321,22 @@
                 <!-- Outcome -->
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <div class="animate-slide-in-right lg:order-2">
-                        <h3 class="text-3xl font-bold mb-4 text-dark">
+                        <h3 class="text-3xl font-semibold mb-4 text-dark">
                             Corporate Office
                         </h3>
-                        <p class="text-red-500 font-bold text-xl mb-6">Approximately 60,000 square feet</p>
+                        <p class="text-red-500 font-medium text-xl mb-6">Approximately 60,000 square feet</p>
                         <p class="text-medium leading-relaxed text-lg mb-4">
                             Curated a cohesive, custom art collection that unified diverse office environments and reinforced a consistent visual identity across the entire workspace.
                         </p>
                         <div class="bg-red-500/10 p-4 rounded-lg border border-red-500/20">
-                            <p class="font-bold text-dark">Delivered custom artwork without the gallery pricetag</p>
+                            <p class="font-medium text-dark">Delivered custom artwork without the gallery pricetag</p>
                         </div>
                     </div>
                     <div class="animate-slide-in-left lg:order-1">
                         <div class="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 border border-gray-200 h-80 flex items-center justify-center hover-glow">
                             <div class="text-center">
                                 <i class="fas fa-building text-red-500 text-7xl mb-6"></i>
-                                <p class="text-dark text-xl font-semibold">Corporate Office</p>
+                                <p class="text-dark text-xl font-medium">Corporate Office</p>
                             </div>
                         </div>
                     </div>
@@ -1097,22 +1345,22 @@
                 <!-- Outcome -->
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <div class="animate-slide-in-left">
-                        <h3 class="text-3xl font-bold mb-4 text-dark">
+                        <h3 class="text-3xl font-semibold mb-4 text-dark">
                             Luxury Apartment Complex
                         </h3>
-                        <p class="text-red-500 font-bold text-xl mb-6">4 building phased buildout</p>
+                        <p class="text-red-500 font-medium text-xl mb-6">4 building phased buildout</p>
                         <p class="text-medium leading-relaxed text-lg mb-4">
                             Implemented phased production and delivery to align with construction timelines, ensuring artwork arrived at the right time for each stage of installation.
                         </p>
                         <div class="bg-red-500/10 p-4 rounded-lg border border-red-500/20">
-                            <p class="font-bold text-dark">Saved the client costly storage costs and additional logistical planning</p>
+                            <p class="font-medium text-dark">Saved the client costly storage costs and additional logistical planning</p>
                         </div>
                     </div>
                     <div class="animate-slide-in-right">
                         <div class="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 border border-gray-200 h-80 flex items-center justify-center hover-glow">
                             <div class="text-center">
                                 <i class="fas fa-home text-red-500 text-7xl mb-6"></i>
-                                <p class="text-dark text-xl font-semibold">Luxury Apartment Complex</p>
+                                <p class="text-dark text-xl font-medium">Luxury Apartment Complex</p>
                             </div>
                         </div>
                     </div>
@@ -1121,22 +1369,22 @@
                 <!-- Outcome -->
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <div class="animate-slide-in-right lg:order-2">
-                        <h3 class="text-3xl font-bold mb-4 text-dark">
+                        <h3 class="text-3xl font-semibold mb-4 text-dark">
                             Healthcare Environments
                         </h3>
-                        <p class="text-red-500 font-bold text-xl mb-6">4 floor assisted living facility</p>
+                        <p class="text-red-500 font-medium text-xl mb-6">4 floor assisted living facility</p>
                         <p class="text-medium leading-relaxed text-lg mb-4">
                             Applied evidence based design principles to support intuitive wayfinding, contributing to clearer navigation across floors and improving overall spatial clarity for residents, staff, and visitors.
                         </p>
                         <div class="bg-red-500/10 p-4 rounded-lg border border-red-500/20">
-                            <p class="font-bold text-dark">Improved experience for residents and visitors</p>
+                            <p class="font-medium text-dark">Improved experience for residents and visitors</p>
                         </div>
                     </div>
                     <div class="animate-slide-in-left lg:order-1">
                         <div class="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 border border-gray-200 h-80 flex items-center justify-center hover-glow">
                             <div class="text-center">
                                 <i class="fas fa-heartbeat text-red-500 text-7xl mb-6"></i>
-                                <p class="text-dark text-xl font-semibold">Healthcare Environment</p>
+                                <p class="text-dark text-xl font-medium">Healthcare Environment</p>
                             </div>
                         </div>
                     </div>
@@ -1149,7 +1397,7 @@
     <section id="testimonials" class="section-padding bg-white">
         <div class="container mx-auto">
             <div class="text-center mb-12 animate-slide-in-bottom">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 brand-heading">Testimonials</h2>
+                <h2 class="text-3xl md:text-4xl font-semibold text-dark mb-4">Testimonials</h2>
                 <p class="text-lg text-medium">Hear what our clients say about working with iCanvas</p>
             </div>
 
@@ -1169,7 +1417,7 @@
                         <!-- NEW: Custom Slider Design -->
                         <div class="custom-slider"></div>
                         <div class="flex justify-between items-start mb-4">
-                            <span class="font-bold text-dark text-base">Olympus Design & Development</span>
+                            <span class="font-medium text-dark text-base">Olympus Design & Development</span>
                             <div class="star-rating text-yellow-400">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
@@ -1186,7 +1434,7 @@
                     <div class="testimonial-card rounded-2xl p-6 hover-glow flex-shrink-0">
                         <div class="custom-slider"></div>
                         <div class="flex justify-between items-start mb-4">
-                            <span class="font-bold text-dark text-base">APK Designs LLC</span>
+                            <span class="font-medium text-dark text-base">APK Designs LLC</span>
                             <div class="star-rating text-yellow-400">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
@@ -1203,7 +1451,7 @@
                     <div class="testimonial-card rounded-2xl p-6 hover-glow flex-shrink-0">
                         <div class="custom-slider"></div>
                         <div class="flex justify-between items-start mb-4">
-                            <span class="font-bold text-dark text-base">Empty Table Interiors, LLC</span>
+                            <span class="font-medium text-dark text-base">Empty Table Interiors, LLC</span>
                             <div class="star-rating text-yellow-400">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
@@ -1220,7 +1468,7 @@
                     <div class="testimonial-card rounded-2xl p-6 hover-glow flex-shrink-0">
                         <div class="custom-slider"></div>
                         <div class="flex justify-between items-start mb-4">
-                            <span class="font-bold text-dark text-base">Epic Interiors</span>
+                            <span class="font-medium text-dark text-base">Epic Interiors</span>
                             <div class="star-rating text-yellow-400">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
@@ -1237,7 +1485,7 @@
                     <div class="testimonial-card rounded-2xl p-6 hover-glow flex-shrink-0">
                         <div class="custom-slider"></div>
                         <div class="flex justify-between items-start mb-4">
-                            <span class="font-bold text-dark text-base">Gracie Lain Design</span>
+                            <span class="font-medium text-dark text-base">Gracie Lain Design</span>
                             <div class="star-rating text-yellow-400">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
@@ -1254,7 +1502,7 @@
                     <div class="testimonial-card rounded-2xl p-6 hover-glow flex-shrink-0">
                         <div class="custom-slider"></div>
                         <div class="flex justify-between items-start mb-4">
-                            <span class="font-bold text-dark text-base">Beautiful Homes Realty</span>
+                            <span class="font-medium text-dark text-base">Beautiful Homes Realty</span>
                             <div class="star-rating text-yellow-400">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
@@ -1280,42 +1528,42 @@
     <section class="section-padding bg-F6F6F0">
         <div class="container mx-auto">
             <div class="text-center max-w-3xl mx-auto mb-16 animate-slide-in-bottom">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 brand-heading">The Complete B2B Art Workflow</h2>
+                <h2 class="text-3xl md:text-4xl font-semibold text-dark mb-4">The Complete B2B Art Workflow</h2>
                 <p class="text-lg text-medium">What to expect when you partner with iCanvas</p>
             </div>
 
             <div class="max-w-4xl mx-auto">
                 <div class="space-y-8">
                     <div class="timeline-item feature-card">
-                        <h3 class="text-xl font-bold mb-4 text-dark">Project discovery</h3>
+                        <h3 class="text-xl font-medium mb-4 text-dark">Project discovery</h3>
                         <p class="text-medium leading-relaxed">
                             We begin by understanding your brand, space requirements, design vision, timeline, and budget to establish a clear foundation for the project.
                         </p>
                     </div>
 
                     <div class="timeline-item feature-card">
-                        <h3 class="text-xl font-bold mb-4 text-dark">Curated art presentation</h3>
+                        <h3 class="text-xl font-medium mb-4 text-dark">Curated art presentation</h3>
                         <p class="text-medium leading-relaxed">
                             Your dedicated art consultant presents thoughtfully curated collections, informed by evidence based design to enhance both visual impact and spatial experience.
                         </p>
                     </div>
 
                     <div class="timeline-item feature-card">
-                        <h3 class="text-xl font-bold mb-4 text-dark">Collaborative refinement</h3>
+                        <h3 class="text-xl font-medium mb-4 text-dark">Collaborative refinement</h3>
                         <p class="text-medium leading-relaxed">
                             We partner closely with your team to refine selections and make adjustments, ensuring the final art package aligns seamlessly with your design intent.
                         </p>
                     </div>
 
                     <div class="timeline-item feature-card">
-                        <h3 class="text-xl font-bold mb-4 text-dark">Production and quality control</h3>
+                        <h3 class="text-xl font-medium mb-4 text-dark">Production and quality control</h3>
                         <p class="text-medium leading-relaxed">
                             Each piece is handcrafted in our US facility and undergoes rigorous color, quality, and durability checks to ensure consistency across the full scope of the project.
                         </p>
                     </div>
 
                     <div class="timeline-item feature-card">
-                        <h3 class="text-xl font-bold mb-4 text-dark">Logistics and delivery coordination</h3>
+                        <h3 class="text-xl font-medium mb-4 text-dark">Logistics and delivery coordination</h3>
                         <p class="text-medium leading-relaxed">
                             Artwork is carefully packaged and delivered to one or multiple locations with coordinated timelines, arriving installation ready.
                         </p>
@@ -1324,7 +1572,7 @@
 
                 <div class="text-center mt-16 animate-slide-in-up">
                     <a href="#contact"
-                        class="bg-red-500 hover:bg-red-600 text-white text-lg px-10 py-4 rounded-full font-bold shadow-xl shadow-red-500/20 transition transform hover:-translate-y-1 hover-glow inline-block">
+                        class="bg-red-500 hover:bg-red-600 text-white text-lg px-10 py-4 rounded-full font-medium shadow-xl shadow-red-500/20 transition transform hover:-translate-y-1 hover-glow inline-block">
                         Start Your Project
                     </a>
                 </div>
@@ -1336,7 +1584,7 @@
     <section class="section-padding bg-white">
         <div class="container mx-auto">
             <div class="text-center mb-16 animate-slide-in-bottom">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 brand-heading">Why iCanvas Wins Over Traditional Vendors</h2>
+                <h2 class="text-3xl md:text-4xl font-semibold text-dark mb-4">Why iCanvas Wins Over Traditional Vendors</h2>
             </div>
 
             <div class="comparison-table-container">
@@ -1356,42 +1604,42 @@
                             <td class="text-medium">Low</td>
                             <td class="text-medium">None</td>
                             <td class="text-medium">Inconsistent</td>
-                            <td class="text-red-500 font-bold">High-volume optimized</td>
+                            <td class="text-red-500 font-medium">High-volume optimized</td>
                         </tr>
                         <tr>
                             <td class="text-dark font-medium">Pricing</td>
                             <td class="text-medium">Unpredictable</td>
                             <td class="text-medium">Extremely high</td>
                             <td class="text-medium">Cheap, low quality</td>
-                            <td class="text-red-500 font-bold">Scalable, fair bulk pricing</td>
+                            <td class="text-red-500 font-medium">Scalable, fair bulk pricing</td>
                         </tr>
                         <tr>
                             <td class="text-dark font-medium">Design Curation</td>
                             <td class="text-medium">None</td>
                             <td class="text-medium">Limited</td>
                             <td class="text-medium">None</td>
-                            <td class="text-red-500 font-bold">Dedicated design guidance</td>
+                            <td class="text-red-500 font-medium">Dedicated design guidance</td>
                         </tr>
                         <tr>
                             <td class="text-dark font-medium">Catalog Size</td>
                             <td class="text-medium">Very small</td>
                             <td class="text-medium">Small</td>
                             <td class="text-medium">None</td>
-                            <td class="text-red-500 font-bold">500,000+ artworks</td>
+                            <td class="text-red-500 font-medium">500,000+ artworks</td>
                         </tr>
                         <tr>
                             <td class="text-dark font-medium">Quality Guarantee</td>
                             <td class="text-medium">No</td>
                             <td class="text-medium">Partial</td>
                             <td class="text-medium">None</td>
-                            <td class="text-red-500 font-bold">Full replacement guarantee</td>
+                            <td class="text-red-500 font-medium">Full replacement guarantee</td>
                         </tr>
                         <tr>
                             <td class="text-dark font-medium">Lead Times</td>
                             <td class="text-medium">Slow</td>
                             <td class="text-medium">Slow</td>
                             <td class="text-medium">Unreliable</td>
-                            <td class="text-red-500 font-bold">Fast, predictable timelines</td>
+                            <td class="text-red-500 font-medium">Fast, predictable timelines</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1402,11 +1650,11 @@
     <!-- FAQ -->
     <section id="faq" class="section-padding bg-F6F6F0">
         <div class="container mx-auto max-w-3xl">
-            <h2 class="text-3xl font-bold mb-12 text-center text-dark brand-heading">Common Questions</h2>
+            <h2 class="text-3xl font-semibold mb-12 text-center text-dark">Common Questions</h2>
             <div class="space-y-4">
                 <details class="faq-item group rounded-2xl overflow-hidden">
                     <summary
-                        class="flex justify-between items-center font-semibold cursor-pointer list-none p-8 hover:bg-red-500/5 transition">
+                        class="flex justify-between items-center font-medium cursor-pointer list-none p-8 hover:bg-red-500/5 transition">
                         <span class="text-dark text-lg">How quickly can you produce?</span>
                         <span class="transition group-open:rotate-180 text-red-500"><i
                                 class="fas fa-chevron-down"></i></span>
@@ -1417,7 +1665,7 @@
                 </details>
                 <details class="faq-item group rounded-2xl overflow-hidden">
                     <summary
-                        class="flex justify-between items-center font-semibold cursor-pointer list-none p-8 hover:bg-red-500/5 transition">
+                        class="flex justify-between items-center font-medium cursor-pointer list-none p-8 hover:bg-red-500/5 transition">
                         <span class="text-dark text-lg">What if items arrive damaged in shipment?</span>
                         <span class="transition group-open:rotate-180 text-red-500"><i
                                 class="fas fa-chevron-down"></i></span>
@@ -1428,7 +1676,7 @@
                 </details>
                 <details class="faq-item group rounded-2xl overflow-hidden">
                     <summary
-                        class="flex justify-between items-center font-semibold cursor-pointer list-none p-8 hover:bg-red-500/5 transition">
+                        class="flex justify-between items-center font-medium cursor-pointer list-none p-8 hover:bg-red-500/5 transition">
                         <span class="text-dark text-lg">Can we use our own artwork?</span>
                         <span class="transition group-open:rotate-180 text-red-500"><i
                                 class="fas fa-chevron-down"></i></span>
@@ -1439,7 +1687,7 @@
                 </details>
                 <details class="faq-item group rounded-2xl overflow-hidden">
                     <summary
-                        class="flex justify-between items-center font-semibold cursor-pointer list-none p-8 hover:bg-red-500/5 transition">
+                        class="flex justify-between items-center font-medium cursor-pointer list-none p-8 hover:bg-red-500/5 transition">
                         <span class="text-dark text-lg">Do you work with procurement teams?</span>
                         <span class="transition group-open:rotate-180 text-red-500"><i
                                 class="fas fa-chevron-down"></i></span>
@@ -1450,7 +1698,7 @@
                 </details>
                 <details class="faq-item group rounded-2xl overflow-hidden">
                     <summary
-                        class="flex justify-between items-center font-semibold cursor-pointer list-none p-8 hover:bg-red-500/5 transition">
+                        class="flex justify-between items-center font-medium cursor-pointer list-none p-8 hover:bg-red-500/5 transition">
                         <span class="text-dark text-lg">Do you help with design selection?</span>
                         <span class="transition group-open:rotate-180 text-red-500"><i
                                 class="fas fa-chevron-down"></i></span>
@@ -1468,14 +1716,14 @@
         <div class="container mx-auto max-w-4xl">
             <div
                 class="cta-card rounded-3xl p-12 text-center shadow-lg border border-gray-200 hover-glow animate-slide-in-up">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-dark brand-heading">Ready to Bring Your Spaces to Life?</h2>
+                <h2 class="text-3xl md:text-4xl font-semibold mb-6 text-dark">Ready to Bring Your Spaces to Life?</h2>
                 <p class="text-lg text-medium mb-8 max-w-2xl mx-auto leading-relaxed">
                     Great art changes how people feel, move, and experience a space.
                     Let's partner together to create commercial environments that inspire.
                 </p>
-                <p class="text-red-500 font-bold text-sm uppercase tracking-widest mb-8">4 project slots left for Q1 2026</p>
+                <p class="text-red-500 font-medium text-sm uppercase tracking-widest mb-8">4 project slots left for Q1 2026</p>
                 <button
-                    class="bg-red-500 hover:bg-red-600 text-white text-lg px-10 py-4 rounded-full font-bold shadow-xl shadow-red-500/20 transition transform hover:-translate-y-1 hover-glow animate-pulse-glow">
+                    class="bg-red-500 hover:bg-red-600 text-white text-lg px-10 py-4 rounded-full font-medium shadow-xl shadow-red-500/20 transition transform hover:-translate-y-1 hover-glow animate-pulse-glow">
                     Book Your B2B Consultation
                 </button>
             </div>
@@ -1498,7 +1746,7 @@
 
                 <!-- Center: Quick Links -->
                 <div class="text-center">
-                    <h4 class="text-dark font-semibold mb-4">Quick Links</h4>
+                    <h4 class="text-dark font-medium mb-4">Quick Links</h4>
                     <div class="flex flex-col gap-2 text-sm">
                         <a href="#process" class="hover:text-red-500 transition">Process</a>
                         <a href="#success" class="hover:text-red-500 transition">Client Success</a>
@@ -1509,7 +1757,7 @@
 
                 <!-- Right: Social Links -->
                 <div class="text-center md:text-right">
-                    <h4 class="text-dark font-semibold mb-4">Connect With Us</h4>
+                    <h4 class="text-dark font-medium mb-4">Connect With Us</h4>
                     <div class="flex justify-center md:justify-end gap-4">
                         <a href="https://www.facebook.com/icanvasart" target="_blank"
                             class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-red-500 transition hover:text-white">
@@ -1553,22 +1801,6 @@
             menu.classList.toggle('hidden');
         });
 
-        // Logo carousel - seamless looping
-        document.addEventListener('DOMContentLoaded', () => {
-            const logoCarousel = document.getElementById('logoCarousel');
-            if (!logoCarousel) return;
-
-            const originalLogos = Array.from(logoCarousel.querySelectorAll('.logo-placeholder'));
-            
-            // Clone logos to create seamless loop - duplicate for infinite scrolling
-            originalLogos.forEach(logo => {
-                logoCarousel.appendChild(logo.cloneNode(true));
-            });
-
-            // Use CSS animation only - no JavaScript listeners for seamless looping
-            // The 12s animation with 50% movement creates a perfect loop
-        });
-
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1586,311 +1818,369 @@
             });
         });
 
-        // Animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all animated elements
+        // Trusted Logos Carousel - FIXED VERSION
         document.addEventListener('DOMContentLoaded', () => {
+            const logoCarousel = document.getElementById('logoCarousel');
+            if (!logoCarousel) return;
+            
+            // Create and setup logo carousel
+            function setupLogoCarousel() {
+                const logoItems = logoCarousel.querySelectorAll('.logo-item');
+                if (!logoItems.length) return;
+                
+                // Clear and rebuild carousel for proper looping
+                logoCarousel.innerHTML = '';
+                
+                // Get original logos (پہلے 17)
+                const originalLogos = Array.from(logoItems).slice(0, 17);
+                
+                // Add original logos
+                originalLogos.forEach(logo => {
+                    logoCarousel.appendChild(logo.cloneNode(true));
+                });
+                
+                // Add duplicate set for seamless loop
+                originalLogos.forEach(logo => {
+                    logoCarousel.appendChild(logo.cloneNode(true));
+                });
+                
+                // Adjust animation duration based on screen size
+                function adjustAnimationSpeed() {
+                    if (window.innerWidth >= 768) {
+                        logoCarousel.style.animationDuration = '50s';
+                    } else {
+                        logoCarousel.style.animationDuration = '30s';
+                    }
+                }
+                
+                // Initial adjustment
+                adjustAnimationSpeed();
+                
+                // Adjust on resize
+                window.addEventListener('resize', adjustAnimationSpeed);
+                
+                // Pause animation on hover
+                logoCarousel.addEventListener('mouseenter', () => {
+                    logoCarousel.style.animationPlayState = 'paused';
+                });
+                
+                logoCarousel.addEventListener('mouseleave', () => {
+                    logoCarousel.style.animationPlayState = 'running';
+                });
+                
+                // Handle touch events for mobile
+                logoCarousel.addEventListener('touchstart', () => {
+                    logoCarousel.style.animationPlayState = 'paused';
+                });
+                
+                logoCarousel.addEventListener('touchend', () => {
+                    setTimeout(() => {
+                        logoCarousel.style.animationPlayState = 'running';
+                    }, 1000);
+                });
+            }
+            
+            setupLogoCarousel();
+            
+            // Animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all animated elements
             document.querySelectorAll('.timeline-item, .faq-item, .feature-card').forEach(el => {
                 observer.observe(el);
             });
-        });
 
-        // Add animation classes on scroll
-        const animatedElements = document.querySelectorAll('.animate-slide-in-left, .animate-slide-in-right, .animate-slide-in-bottom, .animate-slide-in-up');
+            // Add animation classes on scroll
+            const animatedElements = document.querySelectorAll('.animate-slide-in-left, .animate-slide-in-right, .animate-slide-in-bottom, .animate-slide-in-up');
 
-        const elementObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
-
-        animatedElements.forEach(el => {
-            elementObserver.observe(el);
-        });
-
-        // Testimonials Carousel - FIXED VERSION (Seamless Looping with proper cloning)
-        document.addEventListener('DOMContentLoaded', () => {
-            const testimonialsSection = document.getElementById('testimonials');
-            const track = document.getElementById('testimonials-track');
-            const prevBtn = document.getElementById('prev-btn');
-            const nextBtn = document.getElementById('next-btn');
-            const indicatorsContainer = document.getElementById('carousel-indicators');
-            
-            // Get original testimonials
-            const originalTestimonials = track.querySelectorAll('.testimonial-card');
-            if (!originalTestimonials.length) return;
-            
-            let currentIndex = 0;
-            let autoScrollInterval = null;
-            let isInViewport = false;
-            let isTransitioning = false;
-            let totalCards = originalTestimonials.length;
-            
-            // Clone first few cards and append to end for seamless looping
-            function setupCarouselTrack() {
-                // Clear track
-                track.innerHTML = '';
-                
-                // Add original testimonials
-                originalTestimonials.forEach(testimonial => {
-                    track.appendChild(testimonial.cloneNode(true));
-                });
-                
-                // Clone first 3 cards and append to end for seamless looping
-                for (let i = 0; i < 3; i++) {
-                    if (originalTestimonials[i]) {
-                        track.appendChild(originalTestimonials[i].cloneNode(true));
-                    }
-                }
-            }
-            
-            // Create indicators
-            function createIndicators() {
-                indicatorsContainer.innerHTML = '';
-                
-                for (let i = 0; i < totalCards; i++) {
-                    const indicator = document.createElement('div');
-                    indicator.className = 'carousel-indicator';
-                    if (i === 0) indicator.classList.add('active');
-                    indicator.addEventListener('click', () => {
-                        if (!isTransitioning) {
-                            goToSlide(i);
-                        }
-                    });
-                    indicatorsContainer.appendChild(indicator);
-                }
-            }
-            
-            // Update indicators
-            function updateIndicators() {
-                const indicators = document.querySelectorAll('.carousel-indicator');
-                
-                indicators.forEach((indicator, index) => {
-                    if (index === currentIndex) {
-                        indicator.classList.add('active');
-                    } else {
-                        indicator.classList.remove('active');
-                    }
-                });
-            }
-            
-            // Calculate card width
-            function getCardWidth() {
-                const cards = track.querySelectorAll('.testimonial-card');
-                return cards[0] ? cards[0].offsetWidth + 32 : 400; // Default fallback
-            }
-            
-            // Handle window resize
-            function handleResize() {
-                // Reset to first slide on resize
-                if (!isTransitioning) {
-                    currentIndex = 0;
-                    updateCarousel();
-                }
-            }
-            
-            window.addEventListener('resize', handleResize);
-            
-            // Go to specific slide
-            function goToSlide(index) {
-                if (isTransitioning) return;
-                
-                isTransitioning = true;
-                currentIndex = index;
-                updateCarousel();
-                updateIndicators();
-                
-                setTimeout(() => {
-                    isTransitioning = false;
-                }, 700);
-            }
-            
-            // Update carousel position
-            function updateCarousel() {
-                const cardWidth = getCardWidth();
-                const position = -currentIndex * cardWidth;
-                track.style.transform = `translateX(${position}px)`;
-            }
-            
-            // Next slide - SEAMLESS LOOPING with proper cloning
-            function nextSlide() {
-                if (isTransitioning) return;
-                
-                isTransitioning = true;
-                currentIndex++;
-                
-                // If we're at the end of original cards, jump to first card
-                if (currentIndex >= totalCards) {
-                    // Disable transition
-                    track.style.transition = 'none';
-                    currentIndex = 0;
-                    updateCarousel();
-                    
-                    // Force reflow
-                    track.offsetHeight;
-                    
-                    // Re-enable transition
-                    track.style.transition = 'transform 0.7s ease-in-out';
-                    currentIndex = 0;
-                    updateCarousel();
-                } else {
-                    updateCarousel();
-                }
-                
-                updateIndicators();
-                
-                setTimeout(() => {
-                    isTransitioning = false;
-                }, 700);
-            }
-            
-            // Previous slide - SEAMLESS LOOPING
-            function prevSlide() {
-                if (isTransitioning) return;
-                
-                isTransitioning = true;
-                
-                // If we're at the first slide, go to last slide
-                if (currentIndex === 0) {
-                    // First jump to the cloned cards at the end
-                    track.style.transition = 'none';
-                    currentIndex = totalCards - 1;
-                    updateCarousel();
-                    
-                    // Force reflow
-                    track.offsetHeight;
-                    
-                    // Then animate to the actual last card
-                    track.style.transition = 'transform 0.7s ease-in-out';
-                    currentIndex = totalCards - 1;
-                    updateCarousel();
-                } else {
-                    currentIndex--;
-                    updateCarousel();
-                }
-                
-                updateIndicators();
-                
-                setTimeout(() => {
-                    isTransitioning = false;
-                }, 700);
-            }
-            
-            // Start auto scroll
-            function startAutoScroll() {
-                if (autoScrollInterval) return;
-                
-                autoScrollInterval = setInterval(() => {
-                    nextSlide();
-                }, 4000); // 4 seconds interval
-            }
-            
-            // Stop auto scroll
-            function stopAutoScroll() {
-                if (autoScrollInterval) {
-                    clearInterval(autoScrollInterval);
-                    autoScrollInterval = null;
-                }
-            }
-            
-            // Reset auto scroll timer
-            function resetAutoScroll() {
-                stopAutoScroll();
-                if (isInViewport) {
-                    startAutoScroll();
-                }
-            }
-            
-            // Intersection Observer
-            const testimonialObserver = new IntersectionObserver((entries) => {
+            const elementObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        isInViewport = true;
-                        startAutoScroll();
-                    } else {
-                        isInViewport = false;
-                        stopAutoScroll();
+                        entry.target.style.animationPlayState = 'running';
                     }
                 });
-            }, { threshold: 0.3 });
-            
-            testimonialObserver.observe(testimonialsSection);
-            
-            // Button events
-            prevBtn.addEventListener('click', () => {
-                prevSlide();
-                resetAutoScroll();
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
             });
-            
-            nextBtn.addEventListener('click', () => {
-                nextSlide();
-                resetAutoScroll();
+
+            animatedElements.forEach(el => {
+                elementObserver.observe(el);
             });
-            
-            // Pause on hover
-            track.addEventListener('mouseenter', stopAutoScroll);
-            track.addEventListener('mouseleave', () => {
-                if (isInViewport) {
-                    startAutoScroll();
-                }
-            });
-            
-            // Touch events for mobile
-            let touchStartX = 0;
-            let touchEndX = 0;
-            
-            track.addEventListener('touchstart', (e) => {
-                touchStartX = e.changedTouches[0].screenX;
-                stopAutoScroll();
-            });
-            
-            track.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-                if (isInViewport) {
-                    startAutoScroll();
-                }
-            });
-            
-            function handleSwipe() {
-                if (isTransitioning) return;
+
+            // Testimonials Carousel - FIXED VERSION (Seamless Looping with proper cloning)
+            const testimonialsSection = document.getElementById('testimonials');
+            if (testimonialsSection) {
+                const track = document.getElementById('testimonials-track');
+                const prevBtn = document.getElementById('prev-btn');
+                const nextBtn = document.getElementById('next-btn');
+                const indicatorsContainer = document.getElementById('carousel-indicators');
                 
-                const swipeThreshold = 50;
-                const diff = touchStartX - touchEndX;
-                
-                if (Math.abs(diff) > swipeThreshold) {
-                    if (diff > 0) {
-                        // Swipe left - next
-                        nextSlide();
-                    } else {
-                        // Swipe right - previous
-                        prevSlide();
+                // Get original testimonials
+                const originalTestimonials = track.querySelectorAll('.testimonial-card');
+                if (originalTestimonials.length) {
+                    let currentIndex = 0;
+                    let autoScrollInterval = null;
+                    let isInViewport = false;
+                    let isTransitioning = false;
+                    let totalCards = originalTestimonials.length;
+                    
+                    // Clone first few cards and append to end for seamless looping
+                    function setupCarouselTrack() {
+                        // Clear track
+                        track.innerHTML = '';
+                        
+                        // Add original testimonials
+                        originalTestimonials.forEach(testimonial => {
+                            track.appendChild(testimonial.cloneNode(true));
+                        });
+                        
+                        // Clone first 3 cards and append to end for seamless looping
+                        for (let i = 0; i < 3; i++) {
+                            if (originalTestimonials[i]) {
+                                track.appendChild(originalTestimonials[i].cloneNode(true));
+                            }
+                        }
                     }
-                    resetAutoScroll();
+                    
+                    // Create indicators
+                    function createIndicators() {
+                        indicatorsContainer.innerHTML = '';
+                        
+                        for (let i = 0; i < totalCards; i++) {
+                            const indicator = document.createElement('div');
+                            indicator.className = 'carousel-indicator';
+                            if (i === 0) indicator.classList.add('active');
+                            indicator.addEventListener('click', () => {
+                                if (!isTransitioning) {
+                                    goToSlide(i);
+                                }
+                            });
+                            indicatorsContainer.appendChild(indicator);
+                        }
+                    }
+                    
+                    // Update indicators
+                    function updateIndicators() {
+                        const indicators = document.querySelectorAll('.carousel-indicator');
+                        
+                        indicators.forEach((indicator, index) => {
+                            if (index === currentIndex) {
+                                indicator.classList.add('active');
+                            } else {
+                                indicator.classList.remove('active');
+                            }
+                        });
+                    }
+                    
+                    // Calculate card width
+                    function getCardWidth() {
+                        const cards = track.querySelectorAll('.testimonial-card');
+                        return cards[0] ? cards[0].offsetWidth + 32 : 400;
+                    }
+                    
+                    // Handle window resize
+                    function handleResize() {
+                        if (!isTransitioning) {
+                            currentIndex = 0;
+                            updateCarousel();
+                            updateIndicators();
+                        }
+                    }
+                    
+                    window.addEventListener('resize', handleResize);
+                    
+                    // Go to specific slide
+                    function goToSlide(index) {
+                        if (isTransitioning) return;
+                        
+                        isTransitioning = true;
+                        currentIndex = index;
+                        updateCarousel();
+                        updateIndicators();
+                        
+                        setTimeout(() => {
+                            isTransitioning = false;
+                        }, 700);
+                    }
+                    
+                    // Update carousel position
+                    function updateCarousel() {
+                        const cardWidth = getCardWidth();
+                        const position = -currentIndex * cardWidth;
+                        track.style.transform = `translateX(${position}px)`;
+                    }
+                    
+                    // Next slide - SEAMLESS LOOPING
+                    function nextSlide() {
+                        if (isTransitioning) return;
+                        
+                        isTransitioning = true;
+                        currentIndex++;
+                        
+                        if (currentIndex >= totalCards) {
+                            // Jump to first card without animation
+                            track.style.transition = 'none';
+                            currentIndex = 0;
+                            updateCarousel();
+                            
+                            // Force reflow
+                            track.offsetHeight;
+                            
+                            // Re-enable transition
+                            track.style.transition = 'transform 0.7s ease-in-out';
+                            updateCarousel();
+                        } else {
+                            updateCarousel();
+                        }
+                        
+                        updateIndicators();
+                        
+                        setTimeout(() => {
+                            isTransitioning = false;
+                        }, 700);
+                    }
+                    
+                    // Previous slide - SEAMLESS LOOPING
+                    function prevSlide() {
+                        if (isTransitioning) return;
+                        
+                        isTransitioning = true;
+                        
+                        if (currentIndex === 0) {
+                            // Jump to last card
+                            track.style.transition = 'none';
+                            currentIndex = totalCards - 1;
+                            updateCarousel();
+                            
+                            // Force reflow
+                            track.offsetHeight;
+                            
+                            // Re-enable transition
+                            track.style.transition = 'transform 0.7s ease-in-out';
+                            updateCarousel();
+                        } else {
+                            currentIndex--;
+                            updateCarousel();
+                        }
+                        
+                        updateIndicators();
+                        
+                        setTimeout(() => {
+                            isTransitioning = false;
+                        }, 700);
+                    }
+                    
+                    // Start auto scroll
+                    function startAutoScroll() {
+                        if (autoScrollInterval) return;
+                        
+                        autoScrollInterval = setInterval(() => {
+                            nextSlide();
+                        }, 4000);
+                    }
+                    
+                    // Stop auto scroll
+                    function stopAutoScroll() {
+                        if (autoScrollInterval) {
+                            clearInterval(autoScrollInterval);
+                            autoScrollInterval = null;
+                        }
+                    }
+                    
+                    // Reset auto scroll timer
+                    function resetAutoScroll() {
+                        stopAutoScroll();
+                        if (isInViewport) {
+                            startAutoScroll();
+                        }
+                    }
+                    
+                    // Intersection Observer
+                    const testimonialObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                isInViewport = true;
+                                startAutoScroll();
+                            } else {
+                                isInViewport = false;
+                                stopAutoScroll();
+                            }
+                        });
+                    }, { threshold: 0.3 });
+                    
+                    testimonialObserver.observe(testimonialsSection);
+                    
+                    // Button events
+                    prevBtn.addEventListener('click', () => {
+                        prevSlide();
+                        resetAutoScroll();
+                    });
+                    
+                    nextBtn.addEventListener('click', () => {
+                        nextSlide();
+                        resetAutoScroll();
+                    });
+                    
+                    // Pause on hover
+                    track.addEventListener('mouseenter', stopAutoScroll);
+                    track.addEventListener('mouseleave', () => {
+                        if (isInViewport) {
+                            startAutoScroll();
+                        }
+                    });
+                    
+                    // Touch events for mobile
+                    let touchStartX = 0;
+                    let touchEndX = 0;
+                    
+                    track.addEventListener('touchstart', (e) => {
+                        touchStartX = e.changedTouches[0].screenX;
+                        stopAutoScroll();
+                    });
+                    
+                    track.addEventListener('touchend', (e) => {
+                        touchEndX = e.changedTouches[0].screenX;
+                        handleSwipe();
+                        if (isInViewport) {
+                            startAutoScroll();
+                        }
+                    });
+                    
+                    function handleSwipe() {
+                        if (isTransitioning) return;
+                        
+                        const swipeThreshold = 50;
+                        const diff = touchStartX - touchEndX;
+                        
+                        if (Math.abs(diff) > swipeThreshold) {
+                            if (diff > 0) {
+                                nextSlide();
+                            } else {
+                                prevSlide();
+                            }
+                            resetAutoScroll();
+                        }
+                    }
+                    
+                    // Initialize
+                    setupCarouselTrack();
+                    createIndicators();
+                    updateCarousel();
+                    startAutoScroll();
                 }
             }
-            
-            // Initialize
-            setupCarouselTrack();
-            createIndicators();
-            startAutoScroll();
         });
     </script>
 
